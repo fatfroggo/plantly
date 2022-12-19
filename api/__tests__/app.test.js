@@ -12,8 +12,8 @@ afterAll(() => {
   return db.end();
 });
 
-describe("Get /api/plants", () => {
-  test("returns all plants", () => {
+describe("/api/plants", () => {
+  test("GET 200 - returns an array of all plant objects in the correct format", () => {
     return request(app)
       .get("/api/plants")
       .expect(200)
