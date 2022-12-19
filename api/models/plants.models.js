@@ -1,6 +1,5 @@
 const db = require('../../db/connection')
 
-
 exports.selectPlants = (climate) => {
     const validClimates = [
       "Tropical",
@@ -10,21 +9,19 @@ exports.selectPlants = (climate) => {
       "Subtropical arid",
     ];
 
-    if(!validClimates.includes(climate)) {
-
-        if (climate.match(/^\d+$/)) {
-          return Promise.reject({
-            status: 400,
-            msg: "Invalid climate query",
-          });
-        }
-        return Promise.reject({ status: 404, msg: "Climate not found"})
-    }
-
     let queryStr = `SELECT * FROM plants`;
     let queryValues = []
 
     if(climate){
+        if (!validClimates.includes(climate)) {
+          if (climate.test(/^\d+$/)) {
+            return Promise.reject({
+              status: 400,
+              msg: "Invalid climate query",
+            });
+          }
+          return Promise.reject({ status: 404, msg: "Climate not found" });
+        }
         queryStr += ` WHERE climate = $1;`;
         queryValues.push(climate)
     }
