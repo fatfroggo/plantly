@@ -1,8 +1,9 @@
 const db = require("../connection");
 const format = require("pg-format");
 
-const seed = ({ plantsdata }) => {
-  return db.query(`DROP TABLE IF EXISTS plants;`).then(() => {
+const seed = ( plantsdata ) => {
+  return db.query(`DROP TABLE IF EXISTS plants;`)
+  .then(() => {
     return db.query(`
     CREATE TABLE plants (
         plant_id SERIAL PRIMARY KEY,
@@ -21,28 +22,32 @@ const seed = ({ plantsdata }) => {
     );
   })
   .then(() => {
+    const formattedPlants = plantsData.map((plant) => {
+      return [
+        plant.common_name,
+        plant.latin_name,
+        plant.Category,
+        plant.Climate,
+        plant.Origin,
+        plant.Pruning,
+        plant.Watering,
+        plant.light_ideal,
+        plant.img,
+        plant.tempRangeCelsius.max,
+        plant.tempRangeCelsius.min
+      ]
+    })
+
     const queryStr = format(
         `INSERT INTO plants
         ( common_name, latin_name, category, climate, origin, pruning, watering_advice, light_preference, picture_url, temp_range) VALUES %L
         RETURNING *;`, 
-        plantsData.map({ common_name, latin_name, Category, Climate, Origin, Pruning, Watering, light_ideal, img, tempRangeCelsius }) => [])
-    )
+        formattedPlants )
+        return db.query(queryStr)
+  })
+  .then((insertedPlants) => {
+    console.log(insertedPlants.rows)
   })
 };
-
-// Category: "Dracaena",
-//     Climate: "Tropical",
-//     "Common name": ["Janet Craig"],
-//     "Latin name": "Dracaena deremensis 'Janet Craig'",
-//     "Light ideal": "Strong light",
-//     Origin: "Cultivar",
-//     Pruning: "If needed",
-//     Watering: "Keep moist between watering & Can dry between watering",
-//     id: "53417c12-4824-5995-bce0-b81984ebbd1d",
-//     img: "http://www.tropicopia.com/house-plant/thumbnails/5556.jpg",
-//     tempRangeCelsius: {
-//       max: 30,
-//       min: 10,
-//     },
 
 module.exports = seed;
