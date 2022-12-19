@@ -50,9 +50,9 @@ const seed = ({ plantsData }) => {
       );
       return db.query(queryStr);
     })
-    .then((insertedPlants) => {
-      console.log(insertedPlants.rows);
-    });
+    // .then((insertedPlants) => {
+    //   console.log(insertedPlants.rows);
+    // });
 };
 
 module.exports = seed;
