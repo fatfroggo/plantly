@@ -1,5 +1,0 @@
-DROP DATABASE IF EXISTS plantly_test;
-DROP DATABASE IF EXISTS plantly;
-
-CREATE DATABASE plantly_test;
-CREATE DATABASE plantly;
