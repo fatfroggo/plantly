@@ -15,7 +15,7 @@ exports.selectPlants = (climate, common_name) => {
   if (climate || common_name) {
     if (climate) {
       if (!validClimates.includes(climate)) {
-        if (climate.test(/^\d+$/)) {
+        if (climate.match(/^\d+$/)) {
           return Promise.reject({
             status: 400,
             msg: "Invalid climate query",
