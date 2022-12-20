@@ -1,5 +1,5 @@
 const app = require("../app.js");
-const {  plantsData, userData  } = require("../../db/data/test-data/index.js");
+const { plantsData, userData } = require("../../db/data/test-data/index.js");
 const db = require("../../db/connection");
 const seed = require("../../db/seeds/seed");
 const request = require("supertest");
@@ -119,7 +119,7 @@ describe("/api/plants?common_name=", () => {
       .then(({ body }) => {
         expect(body.msg).toEqual("Not found");
       });
-  })
+  });
   test("GET 400 - return a 400 bad request error when given a name of the incorrect data type", () => {
     return request(app)
       .get("/api/plants?common_name=7")
@@ -170,6 +170,27 @@ describe("/api/plants/:plant_id", () => {
       .expect(400)
       .then(({ body }) => {
         expect(body.msg).toEqual("Bad request");
+      });
+  });
+});
+
+describe("/api/users", () => {
+  test("GET 200 - returns an array of user objects in the correct format", () => {
+    return request(app)
+      .get("/api/users")
+      .expect(200)
+      .then(({ body }) => {
+        const { users } = body;
+        expect(users).toBeInstanceOf(Array);
+        users.forEach((user) => {
+          expect(user).toEqual(
+            expect.objectContaining({
+              username: expect.any(String),
+              password: expect.any(String),
+              profile_picture: expect.any(String),
+              email: expect.any(String)
+            }));
+        });
       });
   });
 });
