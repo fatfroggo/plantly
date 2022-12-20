@@ -3,7 +3,6 @@ const format = require("pg-format");
 
 const seed = async (data) => {
   const { plantsData, userData } = data;
- 
   await db.query(`DROP TABLE IF EXISTS plants;`);
   await db.query(`DROP TABLE IF EXISTS users;`);
 
@@ -32,8 +31,27 @@ description VARCHAR(1000) ,
 email VARCHAR(200)
 );`);
 
+  await Promise.all([plantTable, usersTablePromise]);
 
-await Promise.all([plantTable, usersTablePromise]);
+  await db.query(`
+CREATE TABLE userPlants (
+my_Plants_Id SERIAL PRIMARY KEY,
+user_id INT REFERENCES users(user_id) NOT NULL,
+owner VARCHAR NOT NULL REFERENCES users(username)
+);`);
+
+  await db.query(`
+CREATE TABLE myPlants(
+myPlantId SERIAL PRIMARY KEY,
+user VARCHAR REFERENCES users(username) NOT NULL,
+plant_id INT REFERENCES plants(plant_id) NOT NULL,
+my_Plants_Id INT REFERENCES plants(my_Plants_Id) NOT NULL,
+common_name VARCHAR(100) NOT NULL,
+latin_name VARCHAR(100) NOT NULL,
+category VARCHAR(40) NOT NULL,
+climate VARCHAR(40) NOT NULL,
+origin VARCHAR(40)
+);`);
 
   const formattedPlants = plantsData.map((plant) => {
     if (!plant.common_name) plant.common_name = "N/A";
@@ -80,8 +98,8 @@ RETURNING *;`,
     .then((result) => result.rows);
 
   const plantPromise = db.query(queryStr).then((result) => {
-  return result.rows
-});
+    return result.rows;
+  });
 
   await Promise.all([plantPromise, usersPromise]);
 };
