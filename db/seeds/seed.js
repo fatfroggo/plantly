@@ -104,7 +104,6 @@ const seed = ({ plantsData, userData, myPlantsData }) => {
         ( user_id, plant_id, last_watered) VALUES %L RETURNING *;`,
         formattedMyPlants
       );
-      console.log(db.query(queryStr));
       return db.query(queryStr);
     });
 };
