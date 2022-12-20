@@ -42,6 +42,94 @@ describe("/api/plants", () => {
   });
 });
 
+describe("/api/plants?climate", () => {
+  test("Allows users filter by climate", () => {
+    return request(app)
+      .get("/api/plants?climate=Tropical")
+      .expect(200)
+      .then(({ body }) => {
+        expect(body.plants.length).toBe(9);
+        body.plants.forEach((plant) => {
+          expect(plant.climate).toBe("Tropical");
+        });
+      });
+  });
+  test("Returns an empy array when given a valid climate which has no related plants", () => {
+    return request(app)
+      .get("/api/plants?climate=Arid%20Tropical")
+      .expect(200)
+      .then(({ body }) => {
+        expect(body.plants.length).toBe(0);
+      });
+  });
+  test("Returns a 404 not found error when given an climate query of the correct data type but which does not exist", () => {
+    return request(app)
+      .get("/api/plants?climate=farmland")
+      .expect(404)
+      .then(({ body }) => {
+        expect(body.msg).toBe("Climate not found");
+      });
+  });
+  test("Returns a 400 not found error when given a climate query of an invalid data type", () => {
+    return request(app)
+      .get("/api/plants?climate=7")
+      .expect(400)
+      .then(({ body }) => {
+        expect(body.msg).toBe("Invalid climate query");
+      });
+  });
+});
+
+describe("/api/plants?common_name=", () => {
+  test("GET 200 - returns plants with a common name matching or containing the search field", () => {
+    return request(app)
+      .get("/api/plants?common_name=Evergreen")
+      .expect(200)
+      .then(({ body }) => {
+        expect(body.plants.length).toBe(2);
+        body.plants.forEach((plant) => {
+          expect(plant.common_name).toContain("Evergreen");
+        });
+      });
+  });
+  test("GET 200 - allows for multiple queries to be made simultaneously", () => {
+    return request(app)
+      .get("/api/plants?common_name=Evergreen&&climate=Tropical")
+      .expect(200)
+      .then(({ body }) => {
+        expect(body.plants.length).toBe(2);
+        body.plants.forEach((plant) => {
+          expect(plant.common_name).toContain("Evergreen");
+          expect(plant.climate).toEqual("Tropical");
+        });
+      });
+  });
+  test("GET 200 - allows for multiple queries to be made simultaneously", () => {
+    return request(app)
+      .get("/api/plants?common_name=Evergreen&&climate=Subtropical")
+      .expect(200)
+      .then(({ body }) => {
+        expect(body.plants.length).toBe(0);
+      });
+  });
+  test("GET 404 - return a 404 not found error when given a name which does not match any known plants", () => {
+    return request(app)
+      .get("/api/plants?common_name=hello")
+      .expect(404)
+      .then(({ body }) => {
+        expect(body.msg).toEqual("Not found");
+      });
+  })
+  test("GET 400 - return a 400 bad request error when given a name of the incorrect data type", () => {
+    return request(app)
+      .get("/api/plants?common_name=7")
+      .expect(400)
+      .then(({ body }) => {
+        expect(body.msg).toEqual("Invalid name query");
+      });
+  });
+});
+
 describe("/api/plants/:plant_id", () => {
   test("GET 200 - returns a single plant when passed a valid plant_id", () => {
     return request(app)
