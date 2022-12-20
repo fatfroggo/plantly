@@ -1,11 +1,11 @@
 const app = require("../app.js");
-const {  plantsData  } = require("../../db/data/test-data/index.js");
+const {  plantsData, userData  } = require("../../db/data/test-data/index.js");
 const db = require("../../db/connection");
 const seed = require("../../db/seeds/seed");
 const request = require("supertest");
 
 beforeEach(() => {
-  return seed({ plantsData });
+  return seed({ plantsData, userData });
 });
 
 afterAll(() => {
