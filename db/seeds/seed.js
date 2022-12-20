@@ -1,11 +1,15 @@
 const db = require("../connection");
 const format = require("pg-format");
 
-const seed = ({ plantsData, userData }) => {
+const seed = ({ plantsData, userData, myPlantsData }) => {
+ 
   return db
     .query(`DROP TABLE IF EXISTS plants;`)
     .then(() => {
       return db.query(`DROP TABLE IF EXISTS users;`);
+    })
+    .then(() => {
+      return db.query(`DROP TABLE IF EXISTS myPlants;`);
     })
     .then(() => {
       return db.query(`
@@ -32,6 +36,15 @@ const seed = ({ plantsData, userData }) => {
         password VARCHAR(100) NOT NULL,
         profile_picture VARCHAR(200),
         email VARCHAR(200)
+        );`);
+    })
+    .then(() => {
+      return db.query(`
+        CREATE TABLE myPlants (
+        my_plant_id SERIAL PRIMARY KEY,
+        user_id INT,
+        plant_id INT,
+        last_watered INT
         );`);
     })
     .then(() => {
@@ -81,6 +94,19 @@ const seed = ({ plantsData, userData }) => {
       );
       return db.query(queryStr);
     })
+    .then(() => {
+      const formattedMyPlants = myPlantsData.map((myPlant) => {
+        return [myPlant.user_id, myPlant.plant_id, myPlant.last_watered];
+      });
+      const queryStr = format(
+        `
+        INSERT INTO myPlants
+        ( user_id, plant_id, last_watered) VALUES %L RETURNING *;`,
+        formattedMyPlants
+      );
+      console.log(db.query(queryStr));
+      return db.query(queryStr);
+    });
 };
 
 module.exports = seed;
