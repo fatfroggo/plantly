@@ -188,7 +188,6 @@ describe("/api/users", () => {
               username: expect.any(String),
               password: expect.any(String),
               profile_picture: expect.any(String),
-              description: expect.any(String),
               email: expect.any(String)
             }));
         });
