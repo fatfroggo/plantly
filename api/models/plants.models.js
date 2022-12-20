@@ -3,7 +3,7 @@ const db = require("../../db/connection");
 exports.selectPlants = (climate, common_name) => {
   const validClimates = [
     "Tropical",
-    "Subtripical",
+    "Subtropical",
     "Arid Tropical",
     "Tropical humid",
     "Subtropical arid",
@@ -23,33 +23,39 @@ exports.selectPlants = (climate, common_name) => {
         }
         return Promise.reject({ status: 404, msg: "Climate not found" });
       }
-      queryStr += ` WHERE climate = $1;`;
+      queryStr += ` WHERE climate = $1`;
       queryValues.push(climate);
 
       if (common_name) {
-        if (common_name.test(/^\d+$/)) {
+        if (common_name.match(/^\d+$/)) {
           return Promise.reject({
             status: 400,
             msg: "Invalid name query",
           });
         }
-        queryStr += ` AND common_name LIKE '%$2%';`;
-        queryValues.push(common_name);
+        queryStr += ` AND common_name LIKE $2;`;
+        queryValues.push(`%${common_name}%`);
       }
     } else {
-      if (common_name.test(/^\d+$/)) {
+      if (common_name.match(/^\d+$/)) {
         return Promise.reject({
           status: 400,
           msg: "Invalid name query",
         });
       }
-      queryStr += `WHERE common_name LIKE '%$1%'`;
-      queryValues.push(common_name);
+      queryStr += ` WHERE common_name LIKE $1`;
+      queryValues.push(`%${common_name}%`);
     }
   }
 
   return db.query(queryStr, queryValues).then((result) => {
-    return result.rows;
+    if(common_name && !climate && result.rows.length === 0) {
+      return Promise.reject({
+        status: 404,
+        msg: "Not found"
+      })
+    }
+      return result.rows;
   });
 };
 
