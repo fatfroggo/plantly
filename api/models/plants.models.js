@@ -1,5 +1,6 @@
 const db = require("../../db/connection");
 
+
 exports.selectPlants = (climate, common_name) => {
   const validClimates = [
     "Tropical",
@@ -58,6 +59,7 @@ exports.selectPlants = (climate, common_name) => {
       return result.rows;
   });
 };
+
 
 exports.selectPlantsById = (plant_id) => {
   return db

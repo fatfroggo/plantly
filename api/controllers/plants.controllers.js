@@ -3,6 +3,7 @@ const {selectPlants, selectPlantsById} = require('../models/plants.models')
 
 exports.getPlants = (req,res,next) => {
 
+
     const { climate, common_name } = req.query;
     selectPlants(climate, common_name).then((plants) => {
         res.status(200).send({plants})
