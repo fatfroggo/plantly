@@ -34,8 +34,7 @@ const seed = ({ plantsData, userData, myPlantsData }) => {
         user_id SERIAL PRIMARY KEY,
         username VARCHAR(100) NOT NULL,
         password VARCHAR(100) NOT NULL,
-        profile_picture VARCHAR(200) ,
-        description VARCHAR(1000) ,
+        profile_picture VARCHAR(200),
         email VARCHAR(200)
         );`);
     })
@@ -84,14 +83,13 @@ const seed = ({ plantsData, userData, myPlantsData }) => {
           user.username,
           user.password,
           user.profile_picture,
-          user.description,
           user.email,
         ];
       });
       const queryStr = format(
         `
         INSERT INTO users
-        ( username, password, profile_picture, description, email) VALUES %L RETURNING *;`,
+        ( username, password, profile_picture, email) VALUES %L RETURNING *;`,
         formattedUsers
       );
       return db.query(queryStr);
