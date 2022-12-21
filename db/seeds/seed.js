@@ -3,13 +3,12 @@ const format = require("pg-format");
 
 const seed = ({ plantsData, userData, myPlantsData }) => {
  
-  return db
-    .query(`DROP TABLE IF EXISTS plants;`)
-    .then(() => {
-      return db.query(`DROP TABLE IF EXISTS users;`);
-    })
+  return db.query(`DROP TABLE IF EXISTS plants cascade;`)
     .then(() => {
       return db.query(`DROP TABLE IF EXISTS myPlants;`);
+    })
+    .then(() => {
+      return db.query(`DROP TABLE IF EXISTS users;`);
     })
     .then(() => {
       return db.query(`
@@ -31,8 +30,7 @@ const seed = ({ plantsData, userData, myPlantsData }) => {
     .then(() => {
       return db.query(`
         CREATE TABLE users (
-        user_id SERIAL PRIMARY KEY,
-        username VARCHAR(100) NOT NULL,
+        username VARCHAR(100) PRIMARY KEY NOT NULL,
         password VARCHAR(100) NOT NULL,
         profile_picture VARCHAR(200),
         email VARCHAR(200)
@@ -42,9 +40,10 @@ const seed = ({ plantsData, userData, myPlantsData }) => {
       return db.query(`
         CREATE TABLE myPlants (
         my_plant_id SERIAL PRIMARY KEY,
-        user_id INT,
+        username VARCHAR(40) REFERENCES users(username) ON DELETE CASCADE ON UPDATE CASCADE NOT NULL,
         plant_id INT,
-        last_watered INT
+        FOREIGN KEY (plant_id) REFERENCES plants(plant_id) ON DELETE CASCADE ON UPDATE CASCADE,
+        last_watered INT NOT NULL
         );`);
     })
     .then(() => {
@@ -96,16 +95,16 @@ const seed = ({ plantsData, userData, myPlantsData }) => {
     })
     .then(() => {
       const formattedMyPlants = myPlantsData.map((myPlant) => {
-        return [myPlant.user_id, myPlant.plant_id, myPlant.last_watered];
+        return [myPlant.username, myPlant.plant_id, myPlant.last_watered];
       });
       const queryStr = format(
         `
         INSERT INTO myPlants
-        ( user_id, plant_id, last_watered) VALUES %L RETURNING *;`,
+        ( username, plant_id, last_watered) VALUES %L RETURNING *;`,
         formattedMyPlants
       );
       return db.query(queryStr);
-    });
+    })
 };
 
 module.exports = seed;
