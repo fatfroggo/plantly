@@ -9,6 +9,20 @@ exports.selectUsers = () => {
     })
 }
 
+exports.selectUserByUsername = (username) => {
+  return db.query(`
+    SELECT * from users WHERE username = $1
+  `, [ username ])
+  .then((result) => {
+    if(result.rows.length === 0) {
+      return Promise.reject({
+        status: 404, msg: "Not found"
+      })
+    }
+    return result.rows[0]
+  })
+}
+
 exports.addUser = (newUser) => {
   if ("username" in newUser && "password" in newUser && "email" in newUser && "profile_picture" in newUser) {
     return db
