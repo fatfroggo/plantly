@@ -43,7 +43,8 @@ const seed = ( plantsData, userData, myPlantsData ) => {
         username VARCHAR(40) REFERENCES users(username) ON DELETE CASCADE ON UPDATE CASCADE NOT NULL,
         plant_id INT,
         FOREIGN KEY (plant_id) REFERENCES plants(plant_id) ON DELETE CASCADE ON UPDATE CASCADE,
-        last_watered INT NOT NULL
+        last_watered INT NOT NULL,
+        nickname VARCHAR(40)
         );`);
     })
     .then(() => {
@@ -95,12 +96,17 @@ const seed = ( plantsData, userData, myPlantsData ) => {
     })
     .then(() => {
       const formattedMyPlants = myPlantsData.map((myPlant) => {
-        return [myPlant.username, myPlant.plant_id, myPlant.last_watered];
+        return [
+          myPlant.username,
+          myPlant.plant_id,
+          myPlant.last_watered,
+          myPlant.nickname
+        ];
       });
       const queryStr = format(
         `
         INSERT INTO myPlants
-        ( username, plant_id, last_watered) VALUES %L RETURNING *;`,
+        ( username, plant_id, last_watered, nickname) VALUES %L RETURNING *;`,
         formattedMyPlants
       );
       return db.query(queryStr);
