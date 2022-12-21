@@ -265,6 +265,48 @@ describe("/api/users/:username", () => {
   });
 });
 
+describe("Update a username of a valid user", () => {
+  test("Allows a user to update the username of an existing user", () => {
+    return request(app)
+      .patch("/api/users/fatfroggo")
+      .send({
+        username: "fatfroggo123",
+      })
+      .expect(202)
+      .then(({ body }) => {
+        expect(body.user).toEqual({
+          username: "fatfroggo123",
+          password: "password",
+          profile_picture:
+            "https://ih1.redbubble.net/image.309227812.7490/st,small,507x507-pad,600x600,f8f8f8.jpg",
+          email: "fatfroggo@gmail.com",
+        });
+      });
+  });
+  test("PATCH 404 - returns a not found error if given a username which does not exist", () => {
+    return request(app)
+      .patch("/api/users/smileyface")
+      .send({
+        username: "hello123",
+      })
+      .expect(404)
+      .then(({ body }) => {
+        expect(body.msg).toEqual("Not found");
+      });
+  });
+  test("Patch 400 - returns a bad request error when given an invalid key", () => {
+    return request(app)
+      .patch("/api/users/fatfroggo")
+      .send({
+        user: "smileyface",
+      })
+      .expect(400)
+      .then(({ body }) => {
+        expect(body.msg).toEqual("Bad request");
+      });
+  });
+});
+
 describe("/api/myPlants/:username", () => {
   test("GET 200 - returns an array of myPlants for a given username", () => {
     return request(app)
