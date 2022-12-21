@@ -11,7 +11,7 @@ const seed = require("../../db/seeds/seed");
 const request = require("supertest");
 
 beforeEach(() => {
-  return seed({ plantsData, userData, myPlantsData });
+  return seed( plantsData, userData, myPlantsData );
 });
 
 afterAll(() => {
