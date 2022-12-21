@@ -1,6 +1,11 @@
-const { selectMyPlants, addMyPlants} = require("../models/myPlants.models");
+const {
+  selectMyPlants,
+  addMyPlants,
+  selectMyPlantsById,
+  deleteSelectedPlant,
+} = require("../models/myPlants.models");
 const { selectUserByUsername } = require("../models/users.models");
-const { selectPlantsById} = require("../models/plants.models")
+const { selectPlantsById } = require("../models/plants.models");
 exports.getMyPlants = (req, res, next) => {
   const { username } = req.params;
 
@@ -15,9 +20,10 @@ exports.getMyPlants = (req, res, next) => {
 };
 
 exports.postMyPlants = (req, res, next) => {
+
   const { username, plant_id } = req.params;
   const { last_watered, nickname } = req.body;
-    
+
   selectUserByUsername(username)
     .then(() => {
       return selectPlantsById(plant_id);
@@ -27,6 +33,22 @@ exports.postMyPlants = (req, res, next) => {
     })
     .then((myPlant) => {
       res.status(201).send({ myPlant });
+    })
+    .catch(next);
+};
+
+
+exports.deleteMyPlant = (req, res, next) => {
+  const { username, my_plant_id } = req.params;
+  selectUserByUsername(username)
+    .then(() => {
+      return selectMyPlantsById(my_plant_id);
+    })
+    .then(() => {
+      return deleteSelectedPlant( my_plant_id);
+    })
+    .then(() => {
+      res.status(204).send({});
     })
     .catch(next);
 };
