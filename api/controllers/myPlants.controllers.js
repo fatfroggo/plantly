@@ -17,7 +17,7 @@ exports.getMyPlants = (req, res, next) => {
 exports.postMyPlants = (req, res, next) => {
   const { username, plant_id } = req.params;
   const { last_watered } = req.body;
-    console.log(username, plant_id)
+    
   selectUserByUsername(username)
     .then(() => {
       return selectPlantsById(plant_id);
