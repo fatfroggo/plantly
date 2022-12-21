@@ -13,4 +13,10 @@ module.exports = [
       "https://ih1.redbubble.net/image.309227812.7490/st,small,507x507-pad,600x600,f8f8f8.jpg",
     email: "fatfroggo@gmail.com",
   },
+  {
+    username: "abrasumente999",
+    password: "password",
+    profile_picture: "https://i.redd.it/aktfjw00ejm61.png",
+    email: "abrasumente999@gmail.com",
+  },
 ];

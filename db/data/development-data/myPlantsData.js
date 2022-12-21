@@ -1,12 +1,12 @@
 module.exports = [
   {
-    user_id: 1,
-    plant_id: 25,
+    username: "fatfroggo",
+    plant_id: 2,
     last_watered: 5,
   },
   {
-    user_id: 2,
-    plant_id: 50,
+    username: "abrasumente999",
+    plant_id: 4,
     last_watered: 10,
   },
 ];
