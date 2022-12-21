@@ -317,9 +317,11 @@ describe("/api/myPlants/:username", () => {
         expect(myPlants).toBeInstanceOf(Array);
         expect(myPlants.length).toBe(2);
         myPlants.forEach((myPlant) => {
+   
           expect(myPlant).toEqual(
             expect.objectContaining({
               my_plant_id: expect.any(Number),
+              nickname:expect.any(String),
               username: "fatfroggo",
               category: expect.any(String),
               climate: expect.any(String),
@@ -353,17 +355,17 @@ describe("/api/myPlants/username/:plantid", () => {
   test("POST 201 - Adds plant to database and returns the posted plant", () => {
     return request(app)
       .post("/api/myPlants/fatfroggo/3")
-      .send({last_watered: 9 })
+      .send({last_watered: 9 ,nickname: "Dumpling"})
       .expect(201)
       .then(({ body }) => {
         const { myPlant } = body;
-        console.log(myPlant)
         expect(myPlant).toEqual(
           expect.objectContaining({
             my_plant_id: 4,
             plant_id: 3,
             username: "fatfroggo",
             last_watered: 9,
+            nickname: "Dumpling",
           })
         );
       });

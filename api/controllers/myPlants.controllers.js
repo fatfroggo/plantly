@@ -16,14 +16,14 @@ exports.getMyPlants = (req, res, next) => {
 
 exports.postMyPlants = (req, res, next) => {
   const { username, plant_id } = req.params;
-  const { last_watered } = req.body;
+  const { last_watered, nickname } = req.body;
     
   selectUserByUsername(username)
     .then(() => {
       return selectPlantsById(plant_id);
     })
     .then(() => {
-      return addMyPlants(username, plant_id, last_watered);
+      return addMyPlants(username, plant_id, last_watered, nickname);
     })
     .then((myPlant) => {
       res.status(201).send({ myPlant });
