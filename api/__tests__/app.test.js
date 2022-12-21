@@ -304,3 +304,50 @@ describe("/api/myPlants/:username", () => {
       });
   });
 });
+
+
+describe("/api/myPlants/username/:plantid", () => {
+  test("POST 201 - Adds plant to database and returns the posted plant", () => {
+    return request(app)
+      .post("/api/myPlants/fatfroggo/3")
+      .send({last_watered: 9 })
+      .expect(201)
+      .then(({ body }) => {
+        const { myPlant } = body;
+        expect(myPlant).toEqual(
+          expect.objectContaining({
+            plant_id: 3,
+            username: "fatfroggo",
+            last_watered: 9,
+          })
+        );
+      });
+  });
+  test("GET 404 - returns a 404 not found error when given a username which does not exist in the database", () => {
+    return request(app)
+      .post("/api/myPlants/90/3")
+      .send({ last_watered: 9 })
+      .expect(404)
+      .then(({ body }) => {
+        expect(body.msg).toEqual("Not found");
+      });
+  });
+    test("GET 404 - returns a 404 not found error when given a plant_id which does not exist in the database", () => {
+      return request(app)
+        .post("/api/myPlants/fatfroggo/50")
+        .send({ last_watered: 9 })
+        .expect(404)
+        .then(({ body }) => {
+          expect(body.msg).toEqual("Not found");
+        });
+    });
+        test("GET 400 - returns a 400 bad request error when given an invalid body", () => {
+          return request(app)
+            .post("/api/myPlants/fatfroggo/3")
+            .send({ watered: 9 })
+            .expect(400)
+            .then(({ body }) => {
+              expect(body.msg).toEqual("Bad request");
+            });
+        });
+});
