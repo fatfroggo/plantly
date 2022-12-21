@@ -1,6 +1,6 @@
 const app = require("../app.js");
 
-const {  plantsData, userData ,myPlantsData } = require("../../db/data/test-data/index.js");
+const {  plantsData, userData, myPlantsData } = require("../../db/data/test-data/index.js");
 
 const db = require("../../db/connection");
 const seed = require("../../db/seeds/seed");
@@ -193,6 +193,42 @@ describe("/api/users", () => {
               email: expect.any(String)
             }));
         });
+      });
+  });
+});
+
+describe("Add a user", () => {
+  test("POST - 200, allows for the addition of a new user", () => {
+    return request(app)
+      .post("/api/users")
+      .send({
+        username: "christmas123",
+        password: "password",
+        profile_picture:
+          "https://m.media-amazon.com/images/I/31Cd9UQp6eL._SX355_.jpg",
+        email: "christmas123@gmail.com",
+      })
+      .expect(201)
+      .then((res) => {
+        expect(res.body.user).toEqual({
+          user_id: 3,
+          username: "christmas123",
+          password: "password",
+          profile_picture:
+            "https://m.media-amazon.com/images/I/31Cd9UQp6eL._SX355_.jpg",
+          email: "christmas123@gmail.com",
+        });
+      });
+  });
+  test("POST - 400, returns a 400 error if the given user does not meet the input requirements", () => {
+    return request(app)
+      .post("/api/users")
+      .send({
+        username: "fatfroggo",
+      })
+      .expect(400)
+      .then(({ body }) => {
+        expect(body.msg).toEqual("Bad request");
       });
   });
 });

@@ -2,7 +2,9 @@ const express = require("express")
 const apiRouter = require('../api/routers/api.routers.js')
 const app = express()
 
+app.use(express.json())
 app.use("/api", apiRouter)
+
 
 app.use((err, req, res, next) => {
   if (err.status) {
