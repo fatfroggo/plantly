@@ -319,6 +319,7 @@ describe("/api/myPlants/:username", () => {
         myPlants.forEach((myPlant) => {
           expect(myPlant).toEqual(
             expect.objectContaining({
+              my_plant_id: expect.any(Number),
               username: "fatfroggo",
               category: expect.any(String),
               climate: expect.any(String),
@@ -356,8 +357,10 @@ describe("/api/myPlants/username/:plantid", () => {
       .expect(201)
       .then(({ body }) => {
         const { myPlant } = body;
+        console.log(myPlant)
         expect(myPlant).toEqual(
           expect.objectContaining({
+            my_plant_id: 4,
             plant_id: 3,
             username: "fatfroggo",
             last_watered: 9,
