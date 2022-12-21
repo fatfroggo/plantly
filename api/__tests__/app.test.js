@@ -1,6 +1,10 @@
 const app = require("../app.js");
 
-const {  plantsData, userData, myPlantsData } = require("../../db/data/test-data/index.js");
+const {
+  plantsData,
+  userData,
+  myPlantsData,
+} = require("../../db/data/test-data/index.js");
 
 const db = require("../../db/connection");
 const seed = require("../../db/seeds/seed");
@@ -190,8 +194,9 @@ describe("/api/users", () => {
               username: expect.any(String),
               password: expect.any(String),
               profile_picture: expect.any(String),
-              email: expect.any(String)
-            }));
+              email: expect.any(String),
+            })
+          );
         });
       });
   });
@@ -211,7 +216,6 @@ describe("Add a user", () => {
       .expect(201)
       .then((res) => {
         expect(res.body.user).toEqual({
-          user_id: 3,
           username: "christmas123",
           password: "password",
           profile_picture:
@@ -229,6 +233,74 @@ describe("Add a user", () => {
       .expect(400)
       .then(({ body }) => {
         expect(body.msg).toEqual("Bad request");
+      });
+  });
+});
+
+describe("/api/users/:username", () => {
+  test("GET 200 - returns a single user when passed a valid username", () => {
+    return request(app)
+      .get("/api/users/fatfroggo")
+      .expect(200)
+      .then(({ body }) => {
+        const { user } = body;
+        expect(user).toEqual(
+          expect.objectContaining({
+            username: "fatfroggo",
+            password: "password",
+            profile_picture:
+              "https://ih1.redbubble.net/image.309227812.7490/st,small,507x507-pad,600x600,f8f8f8.jpg",
+            email: "fatfroggo@gmail.com",
+          })
+        );
+      });
+  });
+  test("GET 404 - returns a 404 not found error when given a nonexistent username", () => {
+    return request(app)
+      .get("/api/users/90")
+      .expect(404)
+      .then(({ body }) => {
+        expect(body.msg).toEqual("Not found");
+      });
+  });
+});
+
+describe("/api/myPlants/:username", () => {
+  test("GET 200 - returns an array of myPlants for a given username", () => {
+    return request(app)
+      .get("/api/myPlants/fatfroggo")
+      .expect(200)
+      .then(({ body }) => {
+        const { myPlants } = body;
+        expect(myPlants).toBeInstanceOf(Array);
+        expect(myPlants.length).toBe(2);
+        myPlants.forEach((myPlant) => {
+          expect(myPlant).toEqual(
+            expect.objectContaining({
+              username: "fatfroggo",
+              category: expect.any(String),
+              climate: expect.any(String),
+              common_name: expect.any(String),
+              latin_name: expect.any(String),
+              light_preference: expect.any(String),
+              origin: expect.any(String),
+              pruning: expect.any(String),
+              watering_advice: expect.any(String),
+              picture_url: expect.any(String),
+              temp_max: expect.any(Number),
+              temp_min: expect.any(Number),
+              last_watered: expect.any(Number),
+            })
+          );
+        });
+      });
+  });
+  test("GET 404 - returns a 404 not found error when given a username which does not exist in the database", () => {
+    return request(app)
+      .get("/api/myPlants/90")
+      .expect(404)
+      .then(({ body }) => {
+        expect(body.msg).toEqual("Not found");
       });
   });
 });
