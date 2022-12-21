@@ -30,3 +30,33 @@ INSERT INTO myPlants (username, plant_id, last_watered, nickname) VALUES ($1, $2
     return Promise.reject({ status: 400, msg: "Bad request" });
   }
 };
+
+
+exports.selectMyPlantsById = (my_plant_id) => {
+  return db
+    .query(
+      `
+    SELECT * FROM myPlants WHERE my_plant_id = $1;
+    `,
+      [my_plant_id]
+    )
+    .then((result) => {
+      if (result.rows.length === 0) {
+        return Promise.reject({ status: 404, msg: "Not found" });
+      } else {
+        return result.rows[0];
+      }
+    })
+  
+};
+
+exports.deleteSelectedPlant = (my_plant_id) => {
+  return db
+    .query(
+      `
+    DELETE FROM myPlants WHERE my_plant_id = $1;
+    `,
+      [my_plant_id]
+    )
+};
+
