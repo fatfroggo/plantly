@@ -41,6 +41,7 @@ describe("/api/plants", () => {
               picture_url: expect.any(String),
               temp_max: expect.any(Number),
               temp_min: expect.any(Number),
+              time_between_watering: expect.any(Number)
             })
           );
         });
@@ -158,6 +159,7 @@ describe("/api/plants/:plant_id", () => {
               "http://www.tropicopia.com/house-plant/thumbnails/5632.jpg",
             temp_max: 30,
             temp_min: 10,
+            time_between_watering: expect.any(Number)
           })
         );
       });
@@ -334,6 +336,7 @@ describe("/api/myPlants/:username", () => {
               temp_max: expect.any(Number),
               temp_min: expect.any(Number),
               last_watered: expect.any(Number),
+              time_between_watering: expect.any(Number)
             })
           );
         });
