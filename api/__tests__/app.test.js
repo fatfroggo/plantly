@@ -41,7 +41,7 @@ describe("/api/plants", () => {
               picture_url: expect.any(String),
               temp_max: expect.any(Number),
               temp_min: expect.any(Number),
-              time_between_watering: expect.any(Number)
+              time_between_watering: expect.any(Number),
             })
           );
         });
@@ -159,7 +159,7 @@ describe("/api/plants/:plant_id", () => {
               "http://www.tropicopia.com/house-plant/thumbnails/5632.jpg",
             temp_max: 30,
             temp_min: 10,
-            time_between_watering: expect.any(Number)
+            time_between_watering: expect.any(Number),
           })
         );
       });
@@ -318,7 +318,7 @@ describe("/api/myPlants/:username", () => {
         const { myPlants } = body;
         expect(myPlants).toBeInstanceOf(Array);
         expect(myPlants.length).toBe(2);
-        myPlants.forEach((myPlant) => {
+        myPlants.forEach((myPlant) => {        
           expect(myPlant).toEqual(
             expect.objectContaining({
               my_plant_id: expect.any(Number),
@@ -335,8 +335,8 @@ describe("/api/myPlants/:username", () => {
               picture_url: expect.any(String),
               temp_max: expect.any(Number),
               temp_min: expect.any(Number),
-              last_watered: expect.any(Number),
-              time_between_watering: expect.any(Number)
+              last_watered_date: expect.any(String),
+              time_between_watering: expect.any(Number),
             })
           );
         });
@@ -356,7 +356,7 @@ describe("/api/myPlants/username/:plantid", () => {
   test("POST 201 - Adds plant to database and returns the posted plant", () => {
     return request(app)
       .post("/api/myPlants/fatfroggo/3")
-      .send({ last_watered: 9, nickname: "Dumpling" })
+      .send({ last_watered_date: '2022-12-17', nickname: "Dumpling" })
       .expect(201)
       .then(({ body }) => {
         const { myPlant } = body;
@@ -365,7 +365,7 @@ describe("/api/myPlants/username/:plantid", () => {
             my_plant_id: 4,
             plant_id: 3,
             username: "fatfroggo",
-            last_watered: 9,
+            last_watered_date: "2022-12-17T00:00:00.000Z",
             nickname: "Dumpling",
           })
         );
@@ -374,7 +374,7 @@ describe("/api/myPlants/username/:plantid", () => {
   test("GET 404 - returns a 404 not found error when given a username which does not exist in the database", () => {
     return request(app)
       .post("/api/myPlants/90/3")
-      .send({ last_watered: 9 })
+      .send({ last_watered_date: "2022-12-17" })
       .expect(404)
       .then(({ body }) => {
         expect(body.msg).toEqual("Not found");
@@ -383,7 +383,7 @@ describe("/api/myPlants/username/:plantid", () => {
   test("GET 404 - returns a 404 not found error when given a plant_id which does not exist in the database", () => {
     return request(app)
       .post("/api/myPlants/fatfroggo/50")
-      .send({ last_watered: 9 })
+      .send({ last_watered_date: "2022-12-17" })
       .expect(404)
       .then(({ body }) => {
         expect(body.msg).toEqual("Not found");
@@ -409,28 +409,27 @@ describe("DELETE 204/api/myPlants/:username/:myPlantid", () => {
         expect(Object.keys(body).length).toEqual(0);
       });
   });
-   test("GET 404 - returns a 404 not found error when given a username which does not exist in the database", () => {
-     return request(app)
-       .delete("/api/myPlants/imposter/1")
-       .expect(404)
-       .then(({ body }) => {
-         expect(body.msg).toEqual("Not found");
-       });
-   });
-   test("GET 404 - returns a 404 not found error when given a my_plant_id which does not exist in the database", () => {
-     return request(app)
-       .delete("/api/myPlants/fatfroggo/100")
-       .expect(404)
-       .then(({ body }) => {
-         expect(body.msg).toEqual("Not found");
-       });
-   });
+  test("GET 404 - returns a 404 not found error when given a username which does not exist in the database", () => {
+    return request(app)
+      .delete("/api/myPlants/imposter/1")
+      .expect(404)
+      .then(({ body }) => {
+        expect(body.msg).toEqual("Not found");
+      });
+  });
+  test("GET 404 - returns a 404 not found error when given a my_plant_id which does not exist in the database", () => {
+    return request(app)
+      .delete("/api/myPlants/fatfroggo/100")
+      .expect(404)
+      .then(({ body }) => {
+        expect(body.msg).toEqual("Not found");
+      });
+  });
 });
-
 
 describe("/api/myPlants/:username/:my_plant_id", () => {
   test("GET 202 - allows a user to update a plants nickname when given a valid username and myPlantId", () => {
-  return request(app)
+    return request(app)
       .patch("/api/myPlants/fatfroggo/3")
       .send({
         nickname: "Dr. Doc Leaf",
@@ -440,58 +439,60 @@ describe("/api/myPlants/:username/:my_plant_id", () => {
         expect(body.myPlant).toEqual({
           my_plant_id: 3,
           username: "fatfroggo",
-        plant_id: 10,
-        last_watered: 5,
-        nickname: "Dr. Doc Leaf",
+          plant_id: 10,
+          last_watered_date: "2022-12-18T00:00:00.000Z",
+          nickname: "Dr. Doc Leaf",
         });
       });
-  })
-   test("PATCH 404 - returns a not found error if given a username which does not exist", () => {
-     return request(app)
-       .patch("/api/myPlants/smileyface/2")
-       .send({
-         nickname: "hello123",
-       })
-       .expect(404)
-       .then(({ body }) => {
-         expect(body.msg).toEqual("Not found");
-       });
-   });
-   test("Patch 400 - returns a bad request error when given an invalid key", () => {
-     return request(app)
-       .patch("/api/myPlants/fatfroggo/1")
-       .send({
-         user: "smileyface",
-       })
-       .expect(400)
-       .then(({ body }) => {
-         expect(body.msg).toEqual("Bad request");
-       });
-   });
-   test("PATCH 404 - returns a 404 not found error when given a my_plant_id which does not exist", () => {
+  });
+  test("PATCH 404 - returns a not found error if given a username which does not exist", () => {
     return request(app)
-    .patch("/api/myPlants/fatfroggo/15")
-    .send({
-      nickname: "hello"
-    })
-    .expect(404)
-    .then(({ body }) => {
-      expect(body.msg).toEqual("Not found")
-    })
-   })
-   test("PATCH 404 - return a not found error when given a my plant ID which does not belong to the given user", () => {
-  return request(app)
-    .patch("/api/myPlants/fatfroggo/2")
-    .send({
-      nickname: "hello",
-    })
-    .expect(404)
-    .then(({ body }) => {
-      expect(body.msg).toEqual("The given my_plant_id was not found for the given user");
-    });
-   })
-})
- 
+      .patch("/api/myPlants/smileyface/2")
+      .send({
+        nickname: "hello123",
+      })
+      .expect(404)
+      .then(({ body }) => {
+        expect(body.msg).toEqual("Not found");
+      });
+  });
+  test("Patch 400 - returns a bad request error when given an invalid key", () => {
+    return request(app)
+      .patch("/api/myPlants/fatfroggo/1")
+      .send({
+        user: "smileyface",
+      })
+      .expect(400)
+      .then(({ body }) => {
+        expect(body.msg).toEqual("Bad request");
+      });
+  });
+  test("PATCH 404 - returns a 404 not found error when given a my_plant_id which does not exist", () => {
+    return request(app)
+      .patch("/api/myPlants/fatfroggo/15")
+      .send({
+        nickname: "hello",
+      })
+      .expect(404)
+      .then(({ body }) => {
+        expect(body.msg).toEqual("Not found");
+      });
+  });
+  test("PATCH 404 - return a not found error when given a my plant ID which does not belong to the given user", () => {
+    return request(app)
+      .patch("/api/myPlants/fatfroggo/2")
+      .send({
+        nickname: "hello",
+      })
+      .expect(404)
+      .then(({ body }) => {
+        expect(body.msg).toEqual(
+          "The given my_plant_id was not found for the given user"
+        );
+      });
+  });
+});
+
 describe("/api/reddit/:subreddit", () => {
   test("GET 200 - returns an array of all reddit posts of particualr subreddit objects in the correct format", () => {
     return request(app)
