@@ -4,7 +4,7 @@ exports.selectMyPlants = (username) => {
   return db
     .query(
       `
-SELECT my_plant_id, username, category, climate, common_name, latin_name, light_preference, origin, pruning, watering_advice, picture_url, temp_max, temp_min, last_watered, time_between_watering, nickname FROM myPlants
+SELECT my_plant_id, username, category, climate, common_name, latin_name, light_preference, origin, pruning, watering_advice, picture_url, temp_max, temp_min, last_watered_date, time_between_watering, nickname FROM myPlants
 JOIN plants ON plants.plant_id = myPlants.plant_id
 WHERE myPlants.username = $1;
 `,
@@ -15,13 +15,13 @@ WHERE myPlants.username = $1;
     });
 };
 
-exports.addMyPlants = (username, plant_id, last_watered,nickname) => {
-  if (last_watered) {
+exports.addMyPlants = (username, plant_id, last_watered_date, nickname) => {
+  if (last_watered_date) {
     return db
       .query(
         `
-INSERT INTO myPlants (username, plant_id, last_watered, nickname) VALUES ($1, $2, $3, $4) RETURNING *`,
-        [username, plant_id, last_watered, nickname]
+INSERT INTO myPlants (username, plant_id, last_watered_date, nickname) VALUES ($1, $2, $3, $4) RETURNING *`,
+        [username, plant_id, last_watered_date, nickname]
       )
       .then((result) => {
         return result.rows[0];
