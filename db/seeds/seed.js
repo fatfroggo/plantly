@@ -24,8 +24,9 @@ const seed = ( plantsData, userData, myPlantsData ) => {
         light_preference TEXT NOT NULL,
         picture_url TEXT,
         temp_max INT,
-        temp_min INT
-    );`);
+        temp_min INT,
+        time_between_watering INT
+        );`);
     })
     .then(() => {
       return db.query(`
@@ -67,11 +68,13 @@ const seed = ( plantsData, userData, myPlantsData ) => {
           plant.img,
           plant.tempRangeCelsius.max,
           plant.tempRangeCelsius.min,
+          plant.time_between_watering
         ];
       });
+      
       const queryStr = format(
         `INSERT INTO plants
-        ( common_name, latin_name, category, climate, origin, pruning, watering_advice, light_preference, picture_url, temp_max, temp_min) VALUES %L
+        ( common_name, latin_name, category, climate, origin, pruning, watering_advice, light_preference, picture_url, temp_max, temp_min, time_between_watering ) VALUES %L
         RETURNING *;`,
         formattedPlants
       );

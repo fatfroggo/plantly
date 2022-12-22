@@ -334,6 +334,7 @@ describe("/api/myPlants/:username", () => {
               temp_max: expect.any(Number),
               temp_min: expect.any(Number),
               last_watered: expect.any(Number),
+              time_between_watering: expect.any(Number)
             })
           );
         });
