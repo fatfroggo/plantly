@@ -5,6 +5,7 @@ const {
   userData,
   myPlantsData,
 } = require("../../db/data/test-data/index.js");
+const apiJSON = require("../../endpoints.json");
 
 const db = require("../../db/connection");
 const seed = require("../../db/seeds/seed");
@@ -352,7 +353,7 @@ describe("/api/myPlants/:username", () => {
   });
 });
 
-describe("/api/myPlants/username/:plantid", () => {
+describe("POST /api/myPlants/username/:plantid", () => {
   test("POST 201 - Adds plant to database and returns the posted plant", () => {
     return request(app)
       .post("/api/myPlants/fatfroggo/3")
@@ -427,9 +428,11 @@ describe("DELETE 204/api/myPlants/:username/:myPlantid", () => {
   });
 });
 
-describe("/api/myPlants/:username/:my_plant_id", () => {
-  test("GET 202 - allows a user to update a plants nickname when given a valid username and myPlantId", () => {
-    return request(app)
+
+describe("PATCH /api/myPlants/:username/:my_plant_id", () => {
+  test("PATCH 202 - allows a user to update a plants nickname when given a valid username and myPlantId", () => {
+  return request(app)
+
       .patch("/api/myPlants/fatfroggo/3")
       .send({
         nickname: "Dr. Doc Leaf",
@@ -440,7 +443,9 @@ describe("/api/myPlants/:username/:my_plant_id", () => {
           my_plant_id: 3,
           username: "fatfroggo",
           plant_id: 10,
+
           last_watered_date: "2022-12-18T00:00:00.000Z",
+
           nickname: "Dr. Doc Leaf",
         });
       });
@@ -519,3 +524,15 @@ describe("/api/reddit/:subreddit", () => {
       });
   });
 });
+
+describe("GET /api", () => {
+  test("Responds with a JSON object containing information about the various endpoints in the database", () => {
+    return request(app)
+      .get("/api")
+      .expect(200)
+      .then(({ body }) => {
+        expect(body).toEqual(apiJSON);
+      });
+  });
+});
+
