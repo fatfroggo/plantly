@@ -439,9 +439,9 @@ describe("PATCH /api/myPlants/:username/:my_plant_id", () => {
         expect(body.myPlant).toEqual({
           my_plant_id: 3,
           username: "fatfroggo",
-        plant_id: 10,
-        last_watered: 5,
-        nickname: "Dr. Doc Leaf",
+          plant_id: 10,
+          last_watered: 5,
+          nickname: "Dr. Doc Leaf",
         });
       });
   })

@@ -2,13 +2,26 @@
   "GET /api": {
     "description": "serves up a json representation of all the available endpoints of the api"
   },
+
   "GET /api/plants": {
     "description": "serves an array of all plants",
     "queries": ["climate", "common_name"],
     "exampleResponse": {
       "plants": [
         {
-          "plant1": 1
+          "plant_id": 1,
+          "common_name": "Janet Craig",
+          "latin_name": "Dracaena deremensis 'Janet Craig'",
+          "category": "Dracaena",
+          "climate": "Tropical",
+          "origin": "Cultivar",
+          "pruning": "If needed",
+          "watering_advice": "Keep moist between watering & Can dry between watering",
+          "light_preference": "Strong light",
+          "picture_url": "http://www.tropicopia.com/house-plant/thumbnails/5556.jpg",
+          "temp_max": 30,
+          "temp_min": 10,
+          "time_between_watering": 5
         }
       ]
     }
@@ -17,51 +30,134 @@
     "description": "serves a singular plant object of the given plant id",
     "queries": [],
     "exampleResponse": {
-      "plant": [{}]
+      "plant": {
+        "plant_id": 4,
+        "common_name": "Elephant ear",
+        "latin_name": "Alocasia X amazonica",
+        "category": "Other",
+        "climate": "Tropical humid",
+        "origin": "Hybrid",
+        "pruning": "Never",
+        "watering_advice": "Keep moist between watering & Water when soil is half dry",
+        "light_preference": "Strong light",
+        "picture_url": "http://www.tropicopia.com/house-plant/thumbnails/5486.jpg",
+        "temp_max": 28,
+        "temp_min": 15,
+        "time_between_watering": 4
+      }
     }
   },
   "GET /api/users": {
     "description": "Serves an array of user objects",
     "queries": [],
     "exampleResponse": {
-      "users": {}
+      "users": {
+      "username": "bob1234",
+      "password": "engima1010",
+      "profile_picture": "https://i.pinimg.com/564x/28/df/93/28df939060c43403fd35f6c5bfbfa3a7--bob-the-builder-cake-top-websites.jpg",
+      "email": "bob@gmail.com"
+      }
     }
   },
   "GET /api/users/:username": {
     "description": "Serves a user object of the specified username",
     "queries": [],
     "exampleResponse": {
-      "user": {}
+      "user": {
+        "username": "fatfroggo",
+        "password": "password",
+        "profile_picture": "https://ih1.redbubble.net/image.309227812.7490/st,small,507x507-pad,600x600,f8f8f8.jpg",
+        "email": "fatfroggo@gmail.com"
+      }
     }
   },
   "POST /api/users": {
     "description": "Adds a new user",
     "queries": [],
-    "exampleResponse": {}
+    "exampleBody": {
+      "username": "christmas123",
+      "password": "password",
+      "profile_picture": "https://m.media-amazon.com/images/I/31Cd9UQp6eL._SX355_.jpg",
+      "email": "christmas123@gmail.com"
+    },
+    "exampleResponse": {
+      "user": {
+        "username": "christmas123",
+        "password": "password",
+        "profile_picture": "https://m.media-amazon.com/images/I/31Cd9UQp6eL._SX355_.jpg",
+        "email": "christmas123@gmail.com"
+      }
+    }
   },
   "PATCH /api/users/:username": {
     "description": "Updates the username of a given user and returns the new user object",
     "queries": [],
-    "exampleResponse": {}
+    "exampleBody": {
+      "username": "fatfroggo123"
+    },
+    "exampleResponse": {
+      "username": "fatfroggo123",
+      "password": "password",
+      "profile_picture": "https://ih1.redbubble.net/image.309227812.7490/st,small,507x507-pad,600x600,f8f8f8.jpg",
+      "email": "fatfroggo@gmail.com"
+    }
   },
   "GET /api/myPlants/:username": {
     "description": "Serves up an array of plant objects belonging to the given user",
     "queries": [],
-    "exampleResponse": {}
+    "exampleResponse": {
+      "myPlants": {
+        "my_plant_id": 1,
+        "username": "fatfroggo",
+        "category": "Palm",
+        "climate": "Subtropical",
+        "common_name": "Lady palm",
+        "latin_name": "Rhapis excelsa",
+        "light_preference": "Strong light",
+        "origin": "China",
+        "pruning": "Never",
+        "watering_advice": "Keep moist between watering & Must not dry between watering",
+        "picture_url": "http://www.tropicopia.com/house-plant/thumbnails/5725.jpg",
+        "temp_max": 30,
+        "temp_min": 8,
+        "last_watered": 5,
+        "time_between_watering": 3,
+        "nickname": "Mr.Prickles"
+      }
+    }
   },
   "POST /api/myPlants/:username/:plant_id": {
     "description": "Adds the plant of the given plant_id to the myPlants section of the given user",
     "queries": [],
-    "exampleResponse": {}
+    "exampleBody": {
+      "last_watered": 9,
+      "nickname": "Dumpling" 
+    },
+    "exampleResponse": {
+      "my_plant_id": 4,
+      "plant_id": 3,
+      "username": "fatfroggo",
+      "last_watered": 9,
+      "nickname": "Dumpling"
+    }
   },
   "DELETE /api/myPlants/:username/:my_plant_id": {
-    "description": "Deletes the plant of the given plant_id from the myPlants section of the given user",
+    "description": "Deletes the plant of the given plant_id from the myPlants section of the given user. This endpoint does not return a response",
     "queries": [],
     "exampleResponse": {}
   },
   "PATCH /api/myPlants/:username/:plant_id": {
     "description": "Updates the nickname of the given plant in the myPlants section of the given user",
     "queries": [],
-    "exampleResponse": {}
+    "exampleBody": {
+      "nickname": "Dr. Doc Leaf"
+    },
+    "exampleResponse": {
+      "my_plant_id": 3,
+      "username": "fatfroggo",
+      "plant_id": 10,
+      "last_watered": 5,
+      "nickname": "Dr. Doc Leaf"
+    }
   }
 }
