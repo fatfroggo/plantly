@@ -14,6 +14,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Palm",
@@ -30,6 +31,7 @@ module.exports = [
       max: 30,
       min: 8,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Anthurium",
@@ -46,6 +48,7 @@ module.exports = [
       max: 22,
       min: 18,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Other",
@@ -62,6 +65,7 @@ module.exports = [
       max: 28,
       min: 15,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Dracaena",
@@ -78,6 +82,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Aglaonema",
@@ -94,6 +99,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Dracaena",
@@ -110,6 +116,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Hanging",
@@ -126,6 +133,7 @@ module.exports = [
       max: 28,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Bromeliad",
@@ -142,6 +150,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Aglaonema",
@@ -158,6 +167,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Spathiphyllum",
@@ -174,5 +184,6 @@ module.exports = [
       max: 28,
       min: 15,
     },
-  }
-]
+    time_between_watering: 3,
+  },
+];

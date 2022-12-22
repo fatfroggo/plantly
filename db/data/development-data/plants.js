@@ -14,6 +14,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Palm",
@@ -30,6 +31,7 @@ module.exports = [
       max: 30,
       min: 8,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Anthurium",
@@ -46,6 +48,7 @@ module.exports = [
       max: 22,
       min: 18,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Other",
@@ -62,6 +65,7 @@ module.exports = [
       max: 28,
       min: 15,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Dracaena",
@@ -78,6 +82,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Aglaonema",
@@ -94,6 +99,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Dracaena",
@@ -110,6 +116,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Hanging",
@@ -126,6 +133,7 @@ module.exports = [
       max: 28,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Bromeliad",
@@ -142,6 +150,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Aglaonema",
@@ -158,6 +167,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Spathiphyllum",
@@ -174,6 +184,7 @@ module.exports = [
       max: 28,
       min: 15,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Aglaonema",
@@ -190,6 +201,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Flower",
@@ -206,6 +218,7 @@ module.exports = [
       max: 30,
       min: 5,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Hanging",
@@ -222,6 +235,7 @@ module.exports = [
       max: 28,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Anthurium",
@@ -238,6 +252,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Palm",
@@ -254,6 +269,7 @@ module.exports = [
       max: 28,
       min: 5,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Aralia",
@@ -270,6 +286,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Aglaonema",
@@ -286,6 +303,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Ficus",
@@ -302,6 +320,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Anthurium",
@@ -318,6 +337,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Bromeliad",
@@ -333,6 +353,7 @@ module.exports = [
       max: 28,
       min: 15,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Palm",
@@ -349,6 +370,7 @@ module.exports = [
       max: 25,
       min: 10,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Palm",
@@ -365,6 +387,7 @@ module.exports = [
       max: 28,
       min: 10,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Other",
@@ -381,6 +404,7 @@ module.exports = [
       max: 28,
       min: 15,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Sansevieria",
@@ -397,6 +421,7 @@ module.exports = [
       max: 35,
       min: 10,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Dracaena",
@@ -413,6 +438,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Aralia",
@@ -429,6 +455,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Dracaena",
@@ -445,6 +472,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Aglaonema",
@@ -461,6 +489,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Foliage plant",
@@ -476,6 +505,7 @@ module.exports = [
       max: 28,
       min: 10,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Dracaena",
@@ -492,6 +522,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Foliage plant",
@@ -508,6 +539,7 @@ module.exports = [
       max: 25,
       min: 10,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Flower",
@@ -524,6 +556,7 @@ module.exports = [
       max: 30,
       min: 15,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Dieffenbachia",
@@ -540,6 +573,7 @@ module.exports = [
       max: 28,
       min: 12,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Ficus",
@@ -556,6 +590,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Dracaena",
@@ -572,6 +607,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Philodendron",
@@ -593,6 +629,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Aglaonema",
@@ -609,6 +646,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Other",
@@ -625,6 +663,7 @@ module.exports = [
       max: 28,
       min: 15,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Aralia",
@@ -641,6 +680,7 @@ module.exports = [
       max: 28,
       min: 12,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Palm",
@@ -662,6 +702,7 @@ module.exports = [
       max: 28,
       min: 5,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Palm",
@@ -678,6 +719,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Dieffenbachia",
@@ -694,6 +736,7 @@ module.exports = [
       max: 28,
       min: 12,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Flower",
@@ -709,6 +752,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Hanging",
@@ -725,6 +769,7 @@ module.exports = [
       max: 28,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Cactus & Succulent",
@@ -741,6 +786,7 @@ module.exports = [
       max: 35,
       min: 12,
     },
+    time_between_watering: 7,
   },
   {
     Category: "Aglaonema",
@@ -757,6 +803,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Dracaena",
@@ -773,6 +820,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Cactus & Succulent",
@@ -789,6 +837,7 @@ module.exports = [
       max: 35,
       min: 12,
     },
+    time_between_watering: 7,
   },
   {
     Category: "Hanging",
@@ -805,6 +854,7 @@ module.exports = [
       max: 30,
       min: 5,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Aglaonema",
@@ -821,6 +871,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Palm",
@@ -837,6 +888,7 @@ module.exports = [
       max: 28,
       min: 10,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Flower",
@@ -853,6 +905,7 @@ module.exports = [
       max: 28,
       min: 10,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Schefflera",
@@ -869,6 +922,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Ficus",
@@ -885,6 +939,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Bromeliad",
@@ -900,6 +955,7 @@ module.exports = [
       max: 28,
       min: 15,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Schefflera",
@@ -916,6 +972,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Cactus & Succulent",
@@ -932,6 +989,7 @@ module.exports = [
       max: 35,
       min: 8,
     },
+    time_between_watering: 7,
   },
   {
     Category: "Other",
@@ -948,6 +1006,7 @@ module.exports = [
       max: 28,
       min: 12,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Topiairy",
@@ -964,6 +1023,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Philodendron",
@@ -979,6 +1039,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Ficus",
@@ -995,6 +1056,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Philodendron",
@@ -1010,6 +1072,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Dracaena",
@@ -1026,6 +1089,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Hanging",
@@ -1042,6 +1106,7 @@ module.exports = [
       max: 30,
       min: 5,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Aglaonema",
@@ -1058,6 +1123,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Schefflera",
@@ -1074,6 +1140,7 @@ module.exports = [
       max: 28,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Dracaena",
@@ -1090,6 +1157,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Dracaena",
@@ -1106,6 +1174,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Aglaonema",
@@ -1122,6 +1191,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Philodendron",
@@ -1138,6 +1208,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Anthurium",
@@ -1154,6 +1225,7 @@ module.exports = [
       max: 22,
       min: 18,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Foliage plant",
@@ -1170,6 +1242,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Aralia",
@@ -1186,6 +1259,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Aglaonema",
@@ -1202,6 +1276,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Fern",
@@ -1218,6 +1293,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Schefflera",
@@ -1234,6 +1310,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Dracaena",
@@ -1250,6 +1327,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Other",
@@ -1266,6 +1344,7 @@ module.exports = [
       max: 32,
       min: 10,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Dracaena",
@@ -1282,6 +1361,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Foliage plant",
@@ -1298,6 +1378,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Hanging",
@@ -1314,6 +1395,7 @@ module.exports = [
       max: 35,
       min: 8,
     },
+    time_between_watering: 7,
   },
   {
     Category: "Aglaonema",
@@ -1330,6 +1412,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Aglaonema",
@@ -1346,6 +1429,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Aglaonema",
@@ -1362,6 +1446,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Dracaena",
@@ -1378,6 +1463,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Aralia",
@@ -1394,6 +1480,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Foliage plant",
@@ -1410,6 +1497,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Bromeliad",
@@ -1425,6 +1513,7 @@ module.exports = [
       max: 28,
       min: 15,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Aralia",
@@ -1441,6 +1530,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Dieffenbachia",
@@ -1457,6 +1547,7 @@ module.exports = [
       max: 28,
       min: 12,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Foliage plant",
@@ -1473,6 +1564,7 @@ module.exports = [
       max: 25,
       min: 10,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Grass",
@@ -1489,6 +1581,7 @@ module.exports = [
       max: 28,
       min: 5,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Hanging",
@@ -1505,6 +1598,7 @@ module.exports = [
       max: 35,
       min: 8,
     },
+    time_between_watering: 7,
   },
   {
     Category: "Philodendron",
@@ -1521,6 +1615,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Hanging",
@@ -1537,6 +1632,7 @@ module.exports = [
       max: 30,
       min: 5,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Foliage plant",
@@ -1553,6 +1649,7 @@ module.exports = [
       max: 32,
       min: 12,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Bromeliad",
@@ -1569,6 +1666,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Palm",
@@ -1585,6 +1683,7 @@ module.exports = [
       max: 28,
       min: 12,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Foliage plant",
@@ -1601,6 +1700,7 @@ module.exports = [
       max: 28,
       min: 8,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Philodendron",
@@ -1622,6 +1722,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Ficus",
@@ -1638,6 +1739,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Philodendron",
@@ -1653,6 +1755,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Sansevieria",
@@ -1669,6 +1772,7 @@ module.exports = [
       max: 35,
       min: 10,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Fern",
@@ -1685,6 +1789,7 @@ module.exports = [
       max: 28,
       min: 10,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Dieffenbachia",
@@ -1701,6 +1806,7 @@ module.exports = [
       max: 28,
       min: 12,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Palm",
@@ -1717,6 +1823,7 @@ module.exports = [
       max: 28,
       min: 12,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Palm",
@@ -1733,6 +1840,7 @@ module.exports = [
       max: 25,
       min: 10,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Dracaena",
@@ -1749,6 +1857,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Cactus & Succulent",
@@ -1765,6 +1874,7 @@ module.exports = [
       max: 35,
       min: 8,
     },
+    time_between_watering: 7,
   },
   {
     Category: "Foliage plant",
@@ -1781,6 +1891,7 @@ module.exports = [
       max: 28,
       min: 10,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Spathiphyllum",
@@ -1797,6 +1908,7 @@ module.exports = [
       max: 28,
       min: 15,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Schefflera",
@@ -1813,6 +1925,7 @@ module.exports = [
       max: 28,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Hanging",
@@ -1829,6 +1942,7 @@ module.exports = [
       max: 28,
       min: 10,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Aglaonema",
@@ -1845,6 +1959,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Palm",
@@ -1861,6 +1976,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Fern",
@@ -1877,6 +1993,7 @@ module.exports = [
       max: 28,
       min: 12,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Ficus",
@@ -1893,6 +2010,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Hanging",
@@ -1909,6 +2027,7 @@ module.exports = [
       max: 28,
       min: 12,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Anthurium",
@@ -1925,6 +2044,7 @@ module.exports = [
       max: 22,
       min: 18,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Aralia",
@@ -1941,6 +2061,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Foliage plant",
@@ -1957,6 +2078,7 @@ module.exports = [
       max: 28,
       min: 10,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Anthurium",
@@ -1973,6 +2095,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Ficus",
@@ -1989,6 +2112,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Dracaena",
@@ -2005,6 +2129,7 @@ module.exports = [
       max: 28,
       min: 10,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Aglaonema",
@@ -2021,6 +2146,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Cactus & Succulent",
@@ -2036,6 +2162,7 @@ module.exports = [
     tempRangeCelsius: {
       max: 35,
     },
+    time_between_watering: 7,
   },
   {
     Category: "Ficus",
@@ -2052,6 +2179,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Palm",
@@ -2068,6 +2196,7 @@ module.exports = [
       max: 28,
       min: 12,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Aglaonema",
@@ -2084,6 +2213,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Flower",
@@ -2100,6 +2230,7 @@ module.exports = [
       max: 28,
       min: 10,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Palm",
@@ -2116,6 +2247,7 @@ module.exports = [
       max: 30,
       min: 8,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Hanging",
@@ -2132,6 +2264,7 @@ module.exports = [
       max: 28,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Cactus & Succulent",
@@ -2148,6 +2281,7 @@ module.exports = [
       max: 35,
       min: 5,
     },
+    time_between_watering: 7,
   },
   {
     Category: "Foliage plant",
@@ -2164,6 +2298,7 @@ module.exports = [
       max: 28,
       min: 8,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Bromeliad",
@@ -2180,6 +2315,7 @@ module.exports = [
       max: 30,
       min: 15,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Dracaena",
@@ -2196,6 +2332,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Aralia",
@@ -2212,6 +2349,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Dracaena",
@@ -2228,6 +2366,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Aralia",
@@ -2244,6 +2383,7 @@ module.exports = [
       max: 28,
       min: 12,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Aglaonema",
@@ -2260,6 +2400,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Hanging",
@@ -2276,6 +2417,7 @@ module.exports = [
       max: 30,
       min: 5,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Bromeliad",
@@ -2292,6 +2434,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Fern",
@@ -2308,6 +2451,7 @@ module.exports = [
       max: 28,
       min: -5,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Aglaonema",
@@ -2324,6 +2468,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Ficus",
@@ -2340,6 +2485,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Ficus",
@@ -2356,6 +2502,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Sansevieria",
@@ -2372,6 +2519,7 @@ module.exports = [
       max: 35,
       min: 10,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Hanging",
@@ -2388,6 +2536,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Palm",
@@ -2404,6 +2553,7 @@ module.exports = [
       max: 25,
       min: 10,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Palm",
@@ -2420,6 +2570,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Dracaena",
@@ -2436,6 +2587,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Palm",
@@ -2452,6 +2604,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Cactus & Succulent",
@@ -2468,6 +2621,7 @@ module.exports = [
       max: 32,
       min: 5,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Palm",
@@ -2484,6 +2638,7 @@ module.exports = [
       max: 30,
       min: 15,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Foliage plant",
@@ -2500,6 +2655,7 @@ module.exports = [
       max: 30,
       min: 8,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Dracaena",
@@ -2516,6 +2672,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Philodendron",
@@ -2532,6 +2689,7 @@ module.exports = [
       max: 32,
       min: 12,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Foliage plant",
@@ -2548,6 +2706,7 @@ module.exports = [
       max: 32,
       min: 12,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Fern",
@@ -2564,6 +2723,7 @@ module.exports = [
       max: 28,
       min: 12,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Spathiphyllum",
@@ -2580,6 +2740,7 @@ module.exports = [
       max: 28,
       min: 15,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Bromeliad",
@@ -2596,6 +2757,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Foliage plant",
@@ -2612,6 +2774,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Foliage plant",
@@ -2628,6 +2791,7 @@ module.exports = [
       max: 28,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Hanging",
@@ -2644,6 +2808,7 @@ module.exports = [
       max: 30,
       min: 5,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Ficus",
@@ -2660,6 +2825,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Ficus",
@@ -2676,6 +2842,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Aralia",
@@ -2692,6 +2859,7 @@ module.exports = [
       max: 28,
       min: 8,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Palm",
@@ -2708,6 +2876,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Aglaonema",
@@ -2724,6 +2893,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Cactus & Succulent",
@@ -2740,6 +2910,7 @@ module.exports = [
       max: 35,
       min: 5,
     },
+    time_between_watering: 7,
   },
   {
     Category: "Aglaonema",
@@ -2756,6 +2927,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Other",
@@ -2772,6 +2944,7 @@ module.exports = [
       max: 28,
       min: 15,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Fern",
@@ -2788,6 +2961,7 @@ module.exports = [
       max: 30,
       min: 5,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Spathiphyllum",
@@ -2804,6 +2978,7 @@ module.exports = [
       max: 28,
       min: 15,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Aralia",
@@ -2820,6 +2995,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Other",
@@ -2836,6 +3012,7 @@ module.exports = [
       max: 35,
       min: 12,
     },
+    time_between_watering: 7,
   },
   {
     Category: "Foliage plant",
@@ -2852,6 +3029,7 @@ module.exports = [
       max: 28,
       min: 8,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Schefflera",
@@ -2868,6 +3046,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Bromeliad",
@@ -2884,6 +3063,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Hanging",
@@ -2900,6 +3080,7 @@ module.exports = [
       max: 32,
       min: 14,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Palm",
@@ -2916,6 +3097,7 @@ module.exports = [
       max: 30,
       min: 8,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Philodendron",
@@ -2932,6 +3114,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Bromeliad",
@@ -2948,6 +3131,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Flower",
@@ -2963,6 +3147,7 @@ module.exports = [
       max: 28,
       min: 12,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Flower",
@@ -2979,6 +3164,7 @@ module.exports = [
       max: 30,
       min: 15,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Aglaonema",
@@ -2995,6 +3181,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Dracaena",
@@ -3011,6 +3198,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Foliage plant",
@@ -3027,6 +3215,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Ficus",
@@ -3043,6 +3232,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Palm",
@@ -3059,6 +3249,7 @@ module.exports = [
       max: 35,
       min: 10,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Ficus",
@@ -3075,6 +3266,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Philodendron",
@@ -3091,6 +3283,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Hanging",
@@ -3107,6 +3300,7 @@ module.exports = [
       max: 28,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Cactus & Succulent",
@@ -3123,6 +3317,7 @@ module.exports = [
       max: 40,
       min: 5,
     },
+    time_between_watering: 7,
   },
   {
     Category: "Dracaena",
@@ -3139,6 +3334,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Palm",
@@ -3155,6 +3351,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Ficus",
@@ -3171,6 +3368,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Flower",
@@ -3187,6 +3385,7 @@ module.exports = [
       max: 28,
       min: 8,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Palm",
@@ -3203,6 +3402,7 @@ module.exports = [
       max: 35,
       min: 10,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Foliage plant",
@@ -3219,6 +3419,7 @@ module.exports = [
       max: 25,
       min: 10,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Aglaonema",
@@ -3235,6 +3436,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Dracaena",
@@ -3251,6 +3453,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Aralia",
@@ -3267,6 +3470,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Fern",
@@ -3283,6 +3487,7 @@ module.exports = [
       max: 30,
       min: 5,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Fern",
@@ -3298,6 +3503,7 @@ module.exports = [
       max: 25,
       min: 12,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Sansevieria",
@@ -3314,6 +3520,7 @@ module.exports = [
       max: 35,
       min: 10,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Philodendron",
@@ -3330,6 +3537,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Hanging",
@@ -3346,6 +3554,7 @@ module.exports = [
       max: 28,
       min: 10,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Ficus",
@@ -3362,6 +3571,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Aglaonema",
@@ -3378,6 +3588,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Fern",
@@ -3394,6 +3605,7 @@ module.exports = [
       max: 28,
       min: 10,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Foliage plant",
@@ -3410,6 +3622,7 @@ module.exports = [
       max: 25,
       min: 12,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Aglaonema",
@@ -3426,6 +3639,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Cactus & Succulent",
@@ -3441,6 +3655,7 @@ module.exports = [
       max: 35,
       min: 12,
     },
+    time_between_watering: 7,
   },
   {
     Category: "Cactus & Succulent",
@@ -3457,6 +3672,7 @@ module.exports = [
       max: 35,
       min: 5,
     },
+    time_between_watering: 6,
   },
   {
     Category: "Dracaena",
@@ -3473,6 +3689,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Aralia",
@@ -3489,6 +3706,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Aralia",
@@ -3505,6 +3723,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Flower",
@@ -3521,6 +3740,7 @@ module.exports = [
       max: 32,
       min: 10,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Hanging",
@@ -3537,6 +3757,7 @@ module.exports = [
       max: 28,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Topiairy",
@@ -3553,6 +3774,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Aglaonema",
@@ -3569,6 +3791,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Aglaonema",
@@ -3585,6 +3808,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Cactus & Succulent",
@@ -3601,6 +3825,7 @@ module.exports = [
       max: 35,
       min: 5,
     },
+    time_between_watering: 6,
   },
   {
     Category: "Aglaonema",
@@ -3617,6 +3842,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Dieffenbachia",
@@ -3633,6 +3859,7 @@ module.exports = [
       max: 28,
       min: 12,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Dracaena",
@@ -3648,6 +3875,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Cactus & Succulent",
@@ -3663,6 +3891,7 @@ module.exports = [
       max: 35,
       min: 12,
     },
+    time_between_watering: 7,
   },
   {
     Category: "Dieffenbachia",
@@ -3679,6 +3908,7 @@ module.exports = [
       max: 28,
       min: 12,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Palm",
@@ -3695,6 +3925,7 @@ module.exports = [
       max: 30,
       min: 15,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Foliage plant",
@@ -3711,6 +3942,7 @@ module.exports = [
       max: 28,
       min: 10,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Spathiphyllum",
@@ -3727,6 +3959,7 @@ module.exports = [
       max: 28,
       min: 15,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Aglaonema",
@@ -3743,6 +3976,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Bromeliad",
@@ -3759,6 +3993,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Philodendron",
@@ -3775,6 +4010,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Aralia",
@@ -3791,6 +4027,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Topiairy",
@@ -3807,6 +4044,7 @@ module.exports = [
       max: 30,
       min: 5,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Hanging",
@@ -3823,6 +4061,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Aglaonema",
@@ -3839,6 +4078,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Philodendron",
@@ -3855,6 +4095,7 @@ module.exports = [
       max: 32,
       min: 12,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Spathiphyllum",
@@ -3871,6 +4112,7 @@ module.exports = [
       max: 28,
       min: 15,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Schefflera",
@@ -3887,6 +4129,7 @@ module.exports = [
       max: 28,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Schefflera",
@@ -3903,6 +4146,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Ficus",
@@ -3919,6 +4163,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Ficus",
@@ -3935,6 +4180,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Fern",
@@ -3951,6 +4197,7 @@ module.exports = [
       max: 25,
       min: 10,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Dracaena",
@@ -3967,6 +4214,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Foliage plant",
@@ -3983,6 +4231,7 @@ module.exports = [
       max: 28,
       min: 10,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Dracaena",
@@ -3999,6 +4248,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Palm",
@@ -4020,6 +4270,7 @@ module.exports = [
       max: 28,
       min: 5,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Fern",
@@ -4036,6 +4287,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Dracaena",
@@ -4052,6 +4304,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Palm",
@@ -4068,6 +4321,7 @@ module.exports = [
       max: 30,
       min: 8,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Bromeliad",
@@ -4083,6 +4337,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Aglaonema",
@@ -4099,6 +4354,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Schefflera",
@@ -4115,6 +4371,7 @@ module.exports = [
       max: 28,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Aglaonema",
@@ -4131,6 +4388,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Palm",
@@ -4147,6 +4405,7 @@ module.exports = [
       max: 30,
       min: 8,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Hanging",
@@ -4163,6 +4422,7 @@ module.exports = [
       max: 30,
       min: 5,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Dracaena",
@@ -4179,6 +4439,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Ficus",
@@ -4195,6 +4456,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Philodendron",
@@ -4211,6 +4473,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Flower",
@@ -4226,6 +4489,7 @@ module.exports = [
       max: 28,
       min: 12,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Sansevieria",
@@ -4242,6 +4506,7 @@ module.exports = [
       max: 35,
       min: 10,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Schefflera",
@@ -4258,6 +4523,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Flower",
@@ -4274,6 +4540,7 @@ module.exports = [
       max: 32,
       min: 10,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Dracaena",
@@ -4290,6 +4557,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Foliage plant",
@@ -4306,6 +4574,7 @@ module.exports = [
       max: 25,
       min: 12,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Dieffenbachia",
@@ -4322,6 +4591,7 @@ module.exports = [
       max: 28,
       min: 12,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Aralia",
@@ -4338,6 +4608,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Bromeliad",
@@ -4353,6 +4624,7 @@ module.exports = [
       max: 30,
       min: 15,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Philodendron",
@@ -4374,6 +4646,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Spathiphyllum",
@@ -4390,6 +4663,7 @@ module.exports = [
       max: 28,
       min: 15,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Dracaena",
@@ -4406,6 +4680,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Hanging",
@@ -4422,6 +4697,7 @@ module.exports = [
       max: 28,
       min: 5,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Philodendron",
@@ -4438,6 +4714,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Dracaena",
@@ -4454,6 +4731,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Spathiphyllum",
@@ -4470,6 +4748,7 @@ module.exports = [
       max: 28,
       min: 15,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Dracaena",
@@ -4486,6 +4765,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Bromeliad",
@@ -4501,6 +4781,7 @@ module.exports = [
       max: 28,
       min: 10,
     },
+    time_between_watering: 6,
   },
   {
     Category: "Sansevieria",
@@ -4517,6 +4798,7 @@ module.exports = [
       max: 35,
       min: 10,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Cactus & Succulent",
@@ -4533,6 +4815,7 @@ module.exports = [
       max: 35,
       min: 5,
     },
+    time_between_watering: 6,
   },
   {
     Category: "Spathiphyllum",
@@ -4549,6 +4832,7 @@ module.exports = [
       max: 28,
       min: 15,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Philodendron",
@@ -4564,6 +4848,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Ground Cover",
@@ -4580,6 +4865,7 @@ module.exports = [
       max: 35,
       min: 8,
     },
+    time_between_watering: 7,
   },
   {
     Category: "Ficus",
@@ -4596,6 +4882,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Bromeliad",
@@ -4611,6 +4898,7 @@ module.exports = [
       max: 28,
       min: 15,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Bromeliad",
@@ -4627,6 +4915,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Bromeliad",
@@ -4642,6 +4931,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Schefflera",
@@ -4658,6 +4948,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Bromeliad",
@@ -4674,6 +4965,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Other",
@@ -4690,6 +4982,7 @@ module.exports = [
       max: 28,
       min: 8,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Ficus",
@@ -4706,6 +4999,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Other",
@@ -4722,6 +5016,7 @@ module.exports = [
       max: 35,
       min: 12,
     },
+    time_between_watering: 7,
   },
   {
     Category: "Hanging",
@@ -4738,6 +5033,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Dracaena",
@@ -4754,6 +5050,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Palm",
@@ -4770,6 +5067,7 @@ module.exports = [
       max: 28,
       min: 10,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Dracaena",
@@ -4786,6 +5084,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Anthurium",
@@ -4802,6 +5101,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Hanging",
@@ -4818,6 +5118,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Fern",
@@ -4834,6 +5135,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Schefflera",
@@ -4850,6 +5152,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Palm",
@@ -4866,6 +5169,7 @@ module.exports = [
       max: 28,
       min: 10,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Fern",
@@ -4881,6 +5185,7 @@ module.exports = [
       max: 30,
       min: 5,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Schefflera",
@@ -4897,6 +5202,7 @@ module.exports = [
       max: 28,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Topiairy",
@@ -4913,6 +5219,7 @@ module.exports = [
       max: 30,
       min: 5,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Topiairy",
@@ -4929,6 +5236,7 @@ module.exports = [
       max: 30,
       min: 5,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Flower",
@@ -4945,6 +5253,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Flower",
@@ -4961,6 +5270,7 @@ module.exports = [
       max: 32,
       min: 10,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Flower",
@@ -4977,6 +5287,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Fern",
@@ -4993,6 +5304,7 @@ module.exports = [
       max: 28,
       min: 15,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Other",
@@ -5009,6 +5321,7 @@ module.exports = [
       max: 32,
       min: 10,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Sansevieria",
@@ -5025,6 +5338,7 @@ module.exports = [
       max: 35,
       min: 10,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Foliage plant",
@@ -5040,6 +5354,7 @@ module.exports = [
       max: 28,
       min: 10,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Dracaena",
@@ -5056,6 +5371,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Aralia",
@@ -5072,6 +5388,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Foliage plant",
@@ -5088,6 +5405,7 @@ module.exports = [
       max: 25,
       min: 10,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Dracaena",
@@ -5104,6 +5422,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Cactus & Succulent",
@@ -5120,6 +5439,7 @@ module.exports = [
       max: 35,
       min: 5,
     },
+    time_between_watering: 6,
   },
   {
     Category: "Foliage plant",
@@ -5136,6 +5456,7 @@ module.exports = [
       max: 32,
       min: 12,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Schefflera",
@@ -5152,6 +5473,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Dieffenbachia",
@@ -5168,6 +5490,7 @@ module.exports = [
       max: 28,
       min: 12,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Cactus & Succulent",
@@ -5184,6 +5507,7 @@ module.exports = [
       max: 35,
       min: 12,
     },
+    time_between_watering: 7,
   },
   {
     Category: "Flower",
@@ -5200,6 +5524,7 @@ module.exports = [
       max: 28,
       min: 10,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Fern",
@@ -5216,6 +5541,7 @@ module.exports = [
       max: 28,
       min: 10,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Fern",
@@ -5232,6 +5558,7 @@ module.exports = [
       max: 28,
       min: 12,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Foliage plant",
@@ -5248,6 +5575,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Aglaonema",
@@ -5264,6 +5592,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Schefflera",
@@ -5280,6 +5609,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Foliage plant",
@@ -5296,6 +5626,7 @@ module.exports = [
       max: 28,
       min: 10,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Bromeliad",
@@ -5311,6 +5642,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Palm",
@@ -5327,6 +5659,7 @@ module.exports = [
       max: 30,
       min: 8,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Sansevieria",
@@ -5343,6 +5676,7 @@ module.exports = [
       max: 35,
       min: 10,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Cactus & Succulent",
@@ -5358,6 +5692,7 @@ module.exports = [
     tempRangeCelsius: {
       max: 35,
     },
+    time_between_watering: 7,
   },
   {
     Category: "Palm",
@@ -5374,6 +5709,7 @@ module.exports = [
       max: 28,
       min: 8,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Cactus & Succulent",
@@ -5390,6 +5726,7 @@ module.exports = [
       max: 35,
       min: 12,
     },
+    time_between_watering: 7,
   },
   {
     Category: "Aglaonema",
@@ -5406,6 +5743,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Sansevieria",
@@ -5422,6 +5760,7 @@ module.exports = [
       max: 35,
       min: 10,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Palm",
@@ -5443,6 +5782,7 @@ module.exports = [
       max: 28,
       min: 5,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Sansevieria",
@@ -5459,6 +5799,7 @@ module.exports = [
       max: 35,
       min: 10,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Dieffenbachia",
@@ -5475,6 +5816,7 @@ module.exports = [
       max: 28,
       min: 12,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Foliage plant",
@@ -5491,6 +5833,7 @@ module.exports = [
       max: 25,
       min: 10,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Fern",
@@ -5507,6 +5850,7 @@ module.exports = [
       max: 28,
       min: -5,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Ficus",
@@ -5523,6 +5867,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 3,
   },
   {
     Category: "Aralia",
@@ -5539,6 +5884,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Hanging",
@@ -5555,6 +5901,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Cactus & Succulent",
@@ -5571,6 +5918,7 @@ module.exports = [
       max: 35,
       min: 5,
     },
+    time_between_watering: 7,
   },
   {
     Category: "Aralia",
@@ -5587,6 +5935,7 @@ module.exports = [
       max: 30,
       min: 12,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Aglaonema",
@@ -5603,6 +5952,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Aglaonema",
@@ -5619,6 +5969,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Aglaonema",
@@ -5635,6 +5986,7 @@ module.exports = [
       max: 28,
       min: 18,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Foliage plant",
@@ -5651,6 +6003,7 @@ module.exports = [
       max: 25,
       min: 10,
     },
+    time_between_watering: 4,
   },
   {
     Category: "Ficus",
@@ -5667,6 +6020,7 @@ module.exports = [
       max: 30,
       min: 10,
     },
+    time_between_watering: 5,
   },
   {
     Category: "Cactus & Succulent",
@@ -5683,5 +6037,6 @@ module.exports = [
       max: 35,
       min: 12,
     },
+    time_between_watering: 7,
   },
 ];

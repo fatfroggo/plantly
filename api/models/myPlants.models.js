@@ -4,7 +4,7 @@ exports.selectMyPlants = (username) => {
   return db
     .query(
       `
-SELECT my_plant_id, username, category, climate, common_name, latin_name, light_preference, origin, pruning, watering_advice, picture_url, temp_max, temp_min, last_watered, nickname FROM myPlants
+SELECT my_plant_id, username, category, climate, common_name, latin_name, light_preference, origin, pruning, watering_advice, picture_url, temp_max, temp_min, last_watered, time_between_watering, nickname FROM myPlants
 JOIN plants ON plants.plant_id = myPlants.plant_id
 WHERE myPlants.username = $1;
 `,
@@ -60,3 +60,19 @@ exports.deleteSelectedPlant = (my_plant_id) => {
     )
 };
 
+exports.updateMyPlant = (my_plant_id, username, newNickname) => {
+  if("nickname" in newNickname){
+    return db.query(`
+      UPDATE myPlants SET nickname = $1 WHERE my_plant_id = $2 AND username = $3 RETURNING *;
+    `, [newNickname.nickname, my_plant_id, username])
+    .then((result) => {
+      if (result.rows.length === 0) {
+        return Promise.reject({ status: 404, msg : "The given my_plant_id was not found for the given user"})
+      }
+      return result.rows[0]
+    })
+  }
+  else {
+    return Promise.reject({ status: 400, msg: "Bad request"})
+  }
+}
