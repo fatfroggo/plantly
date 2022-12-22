@@ -1,0 +1,67 @@
+{
+  "GET /api": {
+    "description": "serves up a json representation of all the available endpoints of the api"
+  },
+  "GET /api/plants": {
+    "description": "serves an array of all plants",
+    "queries": ["climate", "common_name"],
+    "exampleResponse": {
+      "plants": [
+        {
+          "plant1": 1
+        }
+      ]
+    }
+  },
+  "GET /api/plants/:plant_id": {
+    "description": "serves a singular plant object of the given plant id",
+    "queries": [],
+    "exampleResponse": {
+      "plant": [{}]
+    }
+  },
+  "GET /api/users": {
+    "description": "Serves an array of user objects",
+    "queries": [],
+    "exampleResponse": {
+      "users": {}
+    }
+  },
+  "GET /api/users/:username": {
+    "description": "Serves a user object of the specified username",
+    "queries": [],
+    "exampleResponse": {
+      "user": {}
+    }
+  },
+  "POST /api/users": {
+    "description": "Adds a new user",
+    "queries": [],
+    "exampleResponse": {}
+  },
+  "PATCH /api/users/:username": {
+    "description": "Updates the username of a given user and returns the new user object",
+    "queries": [],
+    "exampleResponse": {}
+  },
+  "GET /api/myPlants/:username": {
+    "description": "Serves up an array of plant objects belonging to the given user",
+    "queries": [],
+    "exampleResponse": {}
+  },
+  "POST /api/myPlants/:username/:plant_id": {
+    "description": "Adds the plant of the given plant_id to the myPlants section of the given user",
+    "queries": [],
+    "exampleResponse": {}
+  },
+  "DELETE /api/myPlants/:username/:my_plant_id": {
+    "description": "Deletes the plant of the given plant_id from the myPlants section of the given user",
+    "queries": [],
+    "exampleResponse": {}
+  },
+  "PATCH /api/myPlants/:username/:plant_id": {
+    "description": "Updates the nickname of the given plant in the myPlants section of the given user",
+    "queries": [],
+    "exampleResponse": {}
+  }
+}

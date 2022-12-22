@@ -352,7 +352,7 @@ describe("/api/myPlants/:username", () => {
   });
 });
 
-describe("/api/myPlants/username/:plantid", () => {
+describe("POST /api/myPlants/username/:plantid", () => {
   test("POST 201 - Adds plant to database and returns the posted plant", () => {
     return request(app)
       .post("/api/myPlants/fatfroggo/3")
@@ -427,8 +427,8 @@ describe("DELETE 204/api/myPlants/:username/:myPlantid", () => {
    });
 });
 
-describe("/api/myPlants/:username/:my_plant_id", () => {
-  test("GET 202 - allows a user to update a plants nickname when given a valid username and myPlantId", () => {
+describe("PATCH /api/myPlants/:username/:my_plant_id", () => {
+  test("PATCH 202 - allows a user to update a plants nickname when given a valid username and myPlantId", () => {
   return request(app)
       .patch("/api/myPlants/fatfroggo/3")
       .send({
