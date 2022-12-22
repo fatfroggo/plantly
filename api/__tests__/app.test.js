@@ -5,6 +5,7 @@ const {
   userData,
   myPlantsData,
 } = require("../../db/data/test-data/index.js");
+const apiJSON = require("../../endpoints.json");
 
 const db = require("../../db/connection");
 const seed = require("../../db/seeds/seed");
@@ -514,6 +515,17 @@ describe("/api/reddit/:subreddit", () => {
             })
           );
         });
+      });
+  });
+});
+
+describe("GET /api", () => {
+  test("Responds with a JSON object containing information about the various endpoints in the database", () => {
+    return request(app)
+      .get("/api")
+      .expect(200)
+      .then(({ body }) => {
+        expect(body).toEqual(apiJSON);
       });
   });
 });
