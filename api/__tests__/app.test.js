@@ -423,3 +423,31 @@ describe("DELETE 204/api/myPlants/:username/:myPlantid", () => {
        });
    });
 });
+
+
+describe("/api/reddit/:subreddit", () => {
+  test("GET 200 - returns an array of all reddit posts of particualr subreddit objects in the correct format", () => {
+    return request(app)
+      .get("/api/reddit/")
+      .expect(200)
+      .then(({ body }) => {
+        const { post_array } = body;
+        expect(post_array).toBeInstanceOf(Array);
+        post_array.forEach((post) => {
+          expect(post).toEqual(
+            expect.objectContaining({
+              subreddit: expect.any(String),
+              author: expect.any(String),
+              title: expect.any(String),
+              votes: expect.any(Number),
+              total_awards_received: expect.any(Number),
+              score: expect.any(Number),
+              thumbnail: expect.any(String),
+              img: expect.any(String),
+              link_to_reddit_post: expect.any(String),
+            })
+          );
+        });
+      });
+  });
+});

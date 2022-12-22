@@ -1,9 +1,11 @@
-const plantsRouter = require('express').Router()
-const {getPlants, getPlantsById} = require('../controllers/plants.controllers')
+const plantsRouter = require("express").Router();
+const {
+  getPlants,
+  getPlantsById,
+} = require("../controllers/plants.controllers");
 
-plantsRouter.get('/', getPlants)
+plantsRouter.get("/", getPlants);
 
-plantsRouter.get('/:plant_id', getPlantsById)
+plantsRouter.get("/:plant_id", getPlantsById);
 
-
-module.exports = plantsRouter
+module.exports = plantsRouter;
