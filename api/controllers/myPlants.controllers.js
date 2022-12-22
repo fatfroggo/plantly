@@ -3,6 +3,7 @@ const {
   addMyPlants,
   selectMyPlantsById,
   deleteSelectedPlant,
+  updateMyPlant,
 } = require("../models/myPlants.models");
 const { selectUserByUsername } = require("../models/users.models");
 const { selectPlantsById } = require("../models/plants.models");
@@ -52,3 +53,20 @@ exports.deleteMyPlant = (req, res, next) => {
     })
     .catch(next);
 };
+
+exports.patchMyPlants = (req, res, next) => {
+  const { username, my_plant_id } = req.params;
+  const  newNickname = req.body;
+
+  selectUserByUsername(username)
+  .then(() => {
+    return selectMyPlantsById(my_plant_id)
+  })
+  .then(() => {
+    return updateMyPlant(my_plant_id, username, newNickname)
+  })
+  .then((myPlant) => {
+    res.status(202).send({ myPlant })
+  })
+  .catch(next)
+}

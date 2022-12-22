@@ -60,3 +60,19 @@ exports.deleteSelectedPlant = (my_plant_id) => {
     )
 };
 
+exports.updateMyPlant = (my_plant_id, username, newNickname) => {
+  if("nickname" in newNickname){
+    return db.query(`
+      UPDATE myPlants SET nickname = $1 WHERE my_plant_id = $2 AND username = $3 RETURNING *;
+    `, [newNickname.nickname, my_plant_id, username])
+    .then((result) => {
+      if (result.rows.length === 0) {
+        return Promise.reject({ status: 404, msg : "The given my_plant_id was not found for the given user"})
+      }
+      return result.rows[0]
+    })
+  }
+  else {
+    return Promise.reject({ status: 400, msg: "Bad request"})
+  }
+}
