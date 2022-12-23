@@ -220,7 +220,7 @@ describe("Add a user", () => {
       .then((res) => {
         expect(res.body.user).toEqual({
           username: "christmas123",
-          password: "password",
+          password: expect.any(String),
           profile_picture:
             "https://m.media-amazon.com/images/I/31Cd9UQp6eL._SX355_.jpg",
           email: "christmas123@gmail.com",
