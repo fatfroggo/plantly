@@ -52,10 +52,10 @@
     "queries": [],
     "exampleResponse": {
       "users": {
-      "username": "bob1234",
-      "password": "engima1010",
-      "profile_picture": "https://i.pinimg.com/564x/28/df/93/28df939060c43403fd35f6c5bfbfa3a7--bob-the-builder-cake-top-websites.jpg",
-      "email": "bob@gmail.com"
+        "username": "bob1234",
+        "password": "engima1010",
+        "profile_picture": "https://i.pinimg.com/564x/28/df/93/28df939060c43403fd35f6c5bfbfa3a7--bob-the-builder-cake-top-websites.jpg",
+        "email": "bob@gmail.com"
       }
     }
   },
@@ -130,11 +130,11 @@
     "description": "Returns a single myPlant object",
     "queries": [],
     "exampleResponse": {
-           "my_plant_id": 3,
-            "username": "fatfroggo",
-            "plant_id": 10,
-            "last_watered_date": "2022-12-18T00:00:00.000Z",
-            "nickname": "Elvis_Parsley",
+      "my_plant_id": 3,
+      "username": "fatfroggo",
+      "plant_id": 10,
+      "last_watered_date": "2022-12-18T00:00:00.000Z",
+      "nickname": "Elvis_Parsley"
     }
   },
   "POST /api/myPlants/:username/:plant_id": {
@@ -142,7 +142,7 @@
     "queries": [],
     "exampleBody": {
       "last_watered": 9,
-      "nickname": "Dumpling" 
+      "nickname": "Dumpling"
     },
     "exampleResponse": {
       "my_plant_id": 4,

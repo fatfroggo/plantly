@@ -319,7 +319,7 @@ describe("/api/myPlants/:username", () => {
         const { myPlants } = body;
         expect(myPlants).toBeInstanceOf(Array);
         expect(myPlants.length).toBe(2);
-        myPlants.forEach((myPlant) => {        
+        myPlants.forEach((myPlant) => {
           expect(myPlant).toEqual(
             expect.objectContaining({
               my_plant_id: expect.any(Number),
@@ -357,7 +357,7 @@ describe("POST /api/myPlants/username/:plantid", () => {
   test("POST 201 - Adds plant to database and returns the posted plant", () => {
     return request(app)
       .post("/api/myPlants/fatfroggo/3")
-      .send({ last_watered_date: '2022-12-17', nickname: "Dumpling" })
+      .send({ last_watered_date: "2022-12-17", nickname: "Dumpling" })
       .expect(201)
       .then(({ body }) => {
         const { myPlant } = body;
@@ -428,11 +428,9 @@ describe("DELETE 204/api/myPlants/:username/:myPlantid", () => {
   });
 });
 
-
 describe("PATCH /api/myPlants/:username/:my_plant_id", () => {
   test("PATCH 202 - allows a user to update a plants nickname when given a valid username and myPlantId", () => {
-  return request(app)
-
+    return request(app)
       .patch("/api/myPlants/fatfroggo/3")
       .send({
         nickname: "Dr. Doc Leaf",
@@ -536,7 +534,7 @@ describe("GET /api", () => {
   });
 });
 
-describe.only("/api/myPlants/:my_plant_id", () => {
+describe("/api/myPlants/:username/:my_plant_id", () => {
   test("GET 200 - returns a single plant from myPlants when passed a valid my_plant_id", () => {
     return request(app)
       .get("/api/myPlants/fatfroggo/3")
@@ -570,12 +568,12 @@ describe.only("/api/myPlants/:my_plant_id", () => {
         expect(body.msg).toEqual("Bad request");
       });
   });
-   test("GET 404 - returns a not found error if given a username which does not exist", () => {
-     return request(app)
-       .get("/api/myPlants/smileyface/2")
-       .expect(404)
-       .then(({ body }) => {
-         expect(body.msg).toEqual("Not found");
-       });
-   });
+  test("GET 404 - returns a not found error if given a username which does not exist", () => {
+    return request(app)
+      .get("/api/myPlants/smileyface/2")
+      .expect(404)
+      .then(({ body }) => {
+        expect(body.msg).toEqual("Not found");
+      });
+  });
 });
