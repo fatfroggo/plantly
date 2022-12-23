@@ -126,6 +126,17 @@
       }
     }
   },
+  "GET /api/myPlants/:username/:my_plant_id": {
+    "description": "Returns a single myPlant object",
+    "queries": [],
+    "exampleResponse": {
+           "my_plant_id": 3,
+            "username": "fatfroggo",
+            "plant_id": 10,
+            "last_watered_date": "2022-12-18T00:00:00.000Z",
+            "nickname": "Elvis_Parsley",
+    }
+  },
   "POST /api/myPlants/:username/:plant_id": {
     "description": "Adds the plant of the given plant_id to the myPlants section of the given user",
     "queries": [],

@@ -7,6 +7,7 @@ const {
 } = require("../models/myPlants.models");
 const { selectUserByUsername } = require("../models/users.models");
 const { selectPlantsById } = require("../models/plants.models");
+
 exports.getMyPlants = (req, res, next) => {
   const { username } = req.params;
 
@@ -67,6 +68,18 @@ exports.patchMyPlants = (req, res, next) => {
   })
   .then((myPlant) => {
     res.status(202).send({ myPlant })
+  })
+  .catch(next)
+}
+
+exports.getMyPlantsById = (req, res, next) => {
+  const { username, my_plant_id } = req.params
+  selectUserByUsername(username)
+  .then(() => {
+    return selectMyPlantsById(my_plant_id);
+  })
+  .then((myPlant) => {
+    res.status(200).send({myPlant})
   })
   .catch(next)
 }
