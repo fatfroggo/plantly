@@ -120,7 +120,7 @@
         "picture_url": "http://www.tropicopia.com/house-plant/thumbnails/5725.jpg",
         "temp_max": 30,
         "temp_min": 8,
-        "last_watered": 5,
+        "last_watered_date": "2022-12-20T00:00:00.000Z",
         "time_between_watering": 3,
         "nickname": "Mr.Prickles"
       }
