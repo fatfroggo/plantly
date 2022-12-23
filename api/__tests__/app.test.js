@@ -536,3 +536,46 @@ describe("GET /api", () => {
   });
 });
 
+describe.only("/api/myPlants/:my_plant_id", () => {
+  test("GET 200 - returns a single plant from myPlants when passed a valid my_plant_id", () => {
+    return request(app)
+      .get("/api/myPlants/fatfroggo/3")
+      .expect(200)
+      .then(({ body }) => {
+        const { myPlant } = body;
+        expect(myPlant).toEqual(
+          expect.objectContaining({
+            my_plant_id: 3,
+            username: "fatfroggo",
+            plant_id: 10,
+            last_watered_date: expect.any(String),
+            nickname: "Elvis_Parsley",
+          })
+        );
+      });
+  });
+  test("GET 404 - returns a 404 not found error when given a nonexistent my_plant_id", () => {
+    return request(app)
+      .get("/api/myPlants/fatfroggo/90")
+      .expect(404)
+      .then(({ body }) => {
+        expect(body.msg).toEqual("Not found");
+      });
+  });
+  test("GET 400 - returns a bad request error when given an invalid id", () => {
+    return request(app)
+      .get("/api/myPlants/fatfroggo/hello")
+      .expect(400)
+      .then(({ body }) => {
+        expect(body.msg).toEqual("Bad request");
+      });
+  });
+   test("GET 404 - returns a not found error if given a username which does not exist", () => {
+     return request(app)
+       .get("/api/myPlants/smileyface/2")
+       .expect(404)
+       .then(({ body }) => {
+         expect(body.msg).toEqual("Not found");
+       });
+   });
+});
