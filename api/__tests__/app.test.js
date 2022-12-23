@@ -548,6 +548,18 @@ describe("/api/myPlants/:username/:my_plant_id", () => {
             plant_id: 10,
             last_watered_date: expect.any(String),
             nickname: "Elvis_Parsley",
+            common_name: expect.any(String),
+            latin_name: expect.any(String),
+            category: expect.any(String),
+            climate: expect.any(String),
+            origin: expect.any(String || null),
+            pruning: expect.any(String),
+            watering_advice: expect.any(String),
+            light_preference: expect.any(String),
+            picture_url: expect.any(String),
+            temp_max: expect.any(Number),
+            temp_min: expect.any(Number),
+            time_between_watering: expect.any(Number),
           })
         );
       });
