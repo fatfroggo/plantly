@@ -1,3 +1,4 @@
+
 const db = require("../../db/connection")
 
 exports.selectUsers = () => {
@@ -23,8 +24,17 @@ exports.selectUserByUsername = (username) => {
   })
 }
 
-exports.addUser = (newUser) => {
-  if ("username" in newUser && "password" in newUser && "email" in newUser && "profile_picture" in newUser) {
+exports.addUser = (newUser, hashedPassword) => {
+
+  if (
+    "username" in newUser &&
+    "password" in newUser &&
+    "email" in newUser &&
+    "profile_picture" in newUser &&
+    hashedPassword
+    
+  ) {
+    
     return db
       .query(
         `
@@ -32,9 +42,15 @@ exports.addUser = (newUser) => {
     VALUES 
     ($1, $2, $3, $4) RETURNING *;
     `,
-        [newUser.username, newUser.password, newUser.profile_picture, newUser.email]
+        [
+          newUser.username,
+          hashedPassword,
+          newUser.profile_picture,
+          newUser.email,
+        ]
       )
       .then((result) => {
+     
         return result.rows[0];
       });
   } else {
