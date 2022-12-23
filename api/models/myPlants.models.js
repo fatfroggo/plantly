@@ -36,7 +36,7 @@ exports.selectMyPlantsById = (my_plant_id) => {
   return db
     .query(
       `
-    SELECT * FROM myPlants WHERE my_plant_id = $1;
+    SELECT my_plant_id, username, plants.plant_id, last_watered_date, nickname, common_name, latin_name, category, climate, origin, pruning, watering_advice, light_preference, picture_url, temp_max, temp_min, time_between_watering FROM myPlants JOIN plants ON myPlants.plant_id = plants.plant_id WHERE my_plant_id = $1;
     `,
       [my_plant_id]
     )
