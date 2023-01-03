@@ -4,7 +4,8 @@ const {
   postMyPlants,
   deleteMyPlant,
   patchMyPlants,
-  getMyPlantsById
+  getMyPlantsById,
+  patchMyPlantsLastWatered,
 } = require("../controllers/myPlants.controllers");
 
 
@@ -17,5 +18,7 @@ myPlantsRouter.post("/:username/:plant_id", postMyPlants);
 myPlantsRouter.delete("/:username/:my_plant_id", deleteMyPlant);
 
 myPlantsRouter.patch("/:username/:my_plant_id", patchMyPlants)
+
+myPlantsRouter.patch("/:username/:my_plant_id/last_watered", patchMyPlantsLastWatered);
 
 module.exports = myPlantsRouter;
