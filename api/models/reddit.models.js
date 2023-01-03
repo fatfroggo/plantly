@@ -1,6 +1,6 @@
 const db = require("../../db/connection");
 ///
-exports.selectRedditPosts = () => {git a
+exports.selectRedditPosts = () => {
   return fetch(`https://www.reddit.com/r/houseplants/hot.json`)
     .then((res) => {
       return res.json();
