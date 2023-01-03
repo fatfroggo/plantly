@@ -495,6 +495,74 @@ describe("PATCH /api/myPlants/:username/:my_plant_id", () => {
       });
   });
 });
+describe("PATCH /api/myPlants/:username/:my_plant_id/last_waterered", () => {
+  test("PATCH 202 - allows a user to update a plants last watered date when given a valid username and myPlantId", () => {
+    return request(app)
+      .patch("/api/myPlants/fatfroggo/3/last_watered")
+      .send({
+        last_watered_date: '2023-01-01',
+      })
+      .expect(202)
+      .then(({ body }) => {
+        expect(body.myPlant).toEqual({
+          my_plant_id: 3,
+          username: "fatfroggo",
+          plant_id: 10,
+
+          last_watered_date: "2023-01-01T00:00:00.000Z",
+
+          nickname: "Elvis_Parsley",
+        });
+      });
+  });
+  test("PATCH 404 - returns a not found error if given a username which does not exist", () => {
+    return request(app)
+      .patch("/api/myPlants/smileyface/2/last_watered")
+      .send({
+        last_watered_date: "2023-01-01",
+      })
+      .expect(404)
+      .then(({ body }) => {
+        expect(body.msg).toEqual("Not found");
+      });
+  });
+  test("Patch 400 - returns a bad request error when given an invalid key", () => {
+    return request(app)
+      .patch("/api/myPlants/fatfroggo/1/last_watered")
+      .send({
+        user: "smileyface",
+      })
+      .expect(400)
+      .then(({ body }) => {
+        expect(body.msg).toEqual("Bad request");
+      });
+  });
+  test("PATCH 404 - returns a 404 not found error when given a my_plant_id which does not exist", () => {
+    return request(app)
+      .patch("/api/myPlants/fatfroggo/15/last_watered")
+      .send({
+        last_watered_date: "2023-01-01",
+      })
+      .expect(404)
+      .then(({ body }) => {
+        expect(body.msg).toEqual("Not found");
+      });
+  });
+  test("PATCH 404 - return a not found error when given a my plant ID which does not belong to the given user", () => {
+    return request(app)
+      .patch("/api/myPlants/fatfroggo/2/last_watered")
+      .send({
+        last_watered_date: "2023-01-01",
+      })
+      .expect(404)
+      .then(({ body }) => {
+        expect(body.msg).toEqual(
+          "The given my_plant_id was not found for the given user"
+        );
+      });
+  });
+});
+
 
 describe("/api/reddit/:subreddit", () => {
   test("GET 200 - returns an array of all reddit posts of particualr subreddit objects in the correct format", () => {

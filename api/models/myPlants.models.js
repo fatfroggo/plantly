@@ -31,7 +31,6 @@ INSERT INTO myPlants (username, plant_id, last_watered_date, nickname) VALUES ($
   }
 };
 
-
 exports.selectMyPlantsById = (my_plant_id) => {
   return db
     .query(
@@ -46,33 +45,66 @@ exports.selectMyPlantsById = (my_plant_id) => {
       } else {
         return result.rows[0];
       }
-    })
-  
+    });
 };
 
 exports.deleteSelectedPlant = (my_plant_id) => {
-  return db
-    .query(
-      `
+  return db.query(
+    `
     DELETE FROM myPlants WHERE my_plant_id = $1;
     `,
-      [my_plant_id]
-    )
+    [my_plant_id]
+  );
 };
 
 exports.updateMyPlant = (my_plant_id, username, newNickname) => {
-  if("nickname" in newNickname){
-    return db.query(`
+
+  if ("nickname" in newNickname) {
+    return db
+      .query(
+        `
       UPDATE myPlants SET nickname = $1 WHERE my_plant_id = $2 AND username = $3 RETURNING *;
-    `, [newNickname.nickname, my_plant_id, username])
-    .then((result) => {
-      if (result.rows.length === 0) {
-        return Promise.reject({ status: 404, msg : "The given my_plant_id was not found for the given user"})
-      }
-      return result.rows[0]
-    })
+    `,
+        [newNickname.nickname, my_plant_id, username]
+      )
+      .then((result) => {
+        if (result.rows.length === 0) {
+          return Promise.reject({
+            status: 404,
+            msg: "The given my_plant_id was not found for the given user",
+          });
+        }
+        return result.rows[0];
+      });
+  } else {
+    return Promise.reject({ status: 400, msg: "Bad request" });
   }
-  else {
-    return Promise.reject({ status: 400, msg: "Bad request"})
+};
+
+exports.updateMyPlantLastWatered = (
+  my_plant_id,
+  username,
+  last_watered_date
+) => {
+  if ("last_watered_date" in last_watered_date) {
+  
+    return db
+      .query(
+        `
+      UPDATE myPlants SET last_watered_date = $1 WHERE my_plant_id = $2 AND username = $3 RETURNING *;
+    `,
+        [last_watered_date.last_watered_date, my_plant_id, username]
+      )
+      .then((result) => {
+        if (result.rows.length === 0) {
+          return Promise.reject({
+            status: 404,
+            msg: "The given my_plant_id was not found for the given user",
+          });
+        }
+        return result.rows[0];
+      });
+  } else {
+    return Promise.reject({ status: 400, msg: "Bad request" });
   }
-}
+};

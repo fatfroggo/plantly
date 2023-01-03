@@ -4,6 +4,7 @@ const {
   selectMyPlantsById,
   deleteSelectedPlant,
   updateMyPlant,
+  updateMyPlantLastWatered,
 } = require("../models/myPlants.models");
 const { selectUserByUsername } = require("../models/users.models");
 const { selectPlantsById } = require("../models/plants.models");
@@ -55,22 +56,44 @@ exports.deleteMyPlant = (req, res, next) => {
     .catch(next);
 };
 
-exports.patchMyPlants = (req, res, next) => {
+exports.patchMyPlantsLastWatered = (req, res, next) => {
+  
   const { username, my_plant_id } = req.params;
-  const  newNickname = req.body;
+
+  const last_watered_date = req.body;
 
   selectUserByUsername(username)
-  .then(() => {
-    return selectMyPlantsById(my_plant_id)
-  })
-  .then(() => {
-    return updateMyPlant(my_plant_id, username, newNickname)
-  })
-  .then((myPlant) => {
-    res.status(202).send({ myPlant })
-  })
-  .catch(next)
-}
+    .then(() => {
+  
+      return selectMyPlantsById(my_plant_id);
+    })
+    .then(() => {
+         
+      return updateMyPlantLastWatered(my_plant_id, username, last_watered_date);
+    })
+    .then((myPlant) => {
+  
+      res.status(202).send({ myPlant });
+    })
+    .catch(next);
+};
+
+exports.patchMyPlants = (req, res, next) => {
+  const { username, my_plant_id } = req.params;
+  const newNickname = req.body;
+
+  selectUserByUsername(username)
+    .then(() => {
+      return selectMyPlantsById(my_plant_id);
+    })
+    .then(() => {
+      return updateMyPlant(my_plant_id, username, newNickname);
+    })
+    .then((myPlant) => {
+      res.status(202).send({ myPlant });
+    })
+    .catch(next);
+};
 
 exports.getMyPlantsById = (req, res, next) => {
   const { username, my_plant_id } = req.params
