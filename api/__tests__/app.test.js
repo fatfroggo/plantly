@@ -564,7 +564,7 @@ describe("PATCH /api/myPlants/:username/:my_plant_id/last_waterered", () => {
 });
 
 
-describe("/api/reddit/:subreddit", () => {
+describe("/api/reddit", () => {
   test("GET 200 - returns an array of all reddit posts of particualr subreddit objects in the correct format", () => {
     return request(app)
       .get("/api/reddit/")
