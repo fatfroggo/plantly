@@ -1,6 +1,6 @@
 const db = require("../../db/connection");
-import fetch from "node-fetch";;
-exports.selectRedditPosts = () => {
+///
+exports.selectRedditPosts = () => {git a
   return fetch(`https://www.reddit.com/r/houseplants/hot.json`)
     .then((res) => {
       return res.json();
