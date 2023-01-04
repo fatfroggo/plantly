@@ -25,8 +25,8 @@ exports.getUsersByUsername = (req, res, next) => {
 };
 
 exports.getUsersByEmail = (req, res, next) => {
-  const { email } = req.body;
-
+  const { email } = req.params;
+console.log(email);
   selectUserByEmail(email)
     .then((user) => {
       res.status(200).send({ user });
