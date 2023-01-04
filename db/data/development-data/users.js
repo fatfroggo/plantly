@@ -7,6 +7,13 @@ module.exports = [
     email: "bob@gmail.com",
   },
   {
+    username: "1",
+    password: "123456",
+    profile_picture:
+      "https://i.pinimg.com/564x/28/df/93/28df939060c43403fd35f6c5bfbfa3a7--bob-the-builder-cake-top-websites.jpg",
+    email: "1@gmail.com",
+  },
+  {
     username: "fatfroggo",
     password: "password",
     profile_picture:

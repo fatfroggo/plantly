@@ -268,11 +268,10 @@ describe("/api/users/:username", () => {
   });
 });
 
-describe("/api/users/user/email", () => {
+describe("/api/users/user/:email", () => {
   test("GET 200 - returns a single user when passed a valid email", () => {
     return request(app)
-      .get("/api/users/user/email")
-      .send({email:"fatfroggo@gmail.com"})
+      .get("/api/users/user/fatfroggo@gmail.com")
       .expect(200)
       .then(({ body }) => {
         const { user } = body;
@@ -289,8 +288,7 @@ describe("/api/users/user/email", () => {
   });
   test("GET 404 - returns a 404 not found error when given a nonexistent email", () => {
     return request(app)
-      .get("/api/users/user/email")
-      .send({ email: "hello123@gmail.com" })
+      .get("/api/users/user/hello123@gmail.com")
       .expect(404)
       .then(({ body }) => {
         expect(body.msg).toEqual("Not found");
