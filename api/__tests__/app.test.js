@@ -268,6 +268,37 @@ describe("/api/users/:username", () => {
   });
 });
 
+describe("/api/users/user/email", () => {
+  test("GET 200 - returns a single user when passed a valid email", () => {
+    return request(app)
+      .get("/api/users/user/email")
+      .send({email:"fatfroggo@gmail.com"})
+      .expect(200)
+      .then(({ body }) => {
+        const { user } = body;
+        expect(user).toEqual(
+          expect.objectContaining({
+            username: "fatfroggo",
+            password: "password",
+            profile_picture:
+              "https://ih1.redbubble.net/image.309227812.7490/st,small,507x507-pad,600x600,f8f8f8.jpg",
+            email: "fatfroggo@gmail.com",
+          })
+        );
+      });
+  });
+  test("GET 404 - returns a 404 not found error when given a nonexistent email", () => {
+    return request(app)
+      .get("/api/users/user/email")
+      .send({ email: "hello123@gmail.com" })
+      .expect(404)
+      .then(({ body }) => {
+        expect(body.msg).toEqual("Not found");
+      });
+  });
+});
+
+
 describe("Update a username of a valid user", () => {
   test("Allows a user to update the username of an existing user", () => {
     return request(app)
