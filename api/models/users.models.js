@@ -63,3 +63,23 @@ exports.updateUser = (newUsername, username) => {
     return Promise.reject({status: 400, msg: "Bad request"})
   }
 };
+exports.selectUserByEmail = (email) => {
+  return db
+    .query(
+      `
+    SELECT * from users WHERE email = $1
+  `,
+      [email]
+    )
+    .then((result) => {
+      if (result.rows.length === 0) {
+        return Promise.reject({
+          status: 404,
+          msg: "Not found",
+        });
+      }
+      return result.rows[0];
+    });
+};
+
+;
