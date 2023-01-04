@@ -268,10 +268,10 @@ describe("/api/users/:username", () => {
   });
 });
 
-describe("/api/users/user/email", () => {
-  test("GET 200 - returns a single user when passed a valid email", () => {
+describe.only("/api/users/user/email", () => {
+  test("POST 200 - returns a single user when passed a valid email", () => {
     return request(app)
-      .get("/api/users/user/email")
+      .post("/api/users/user/email")
       .send({email:"fatfroggo@gmail.com"})
       .expect(200)
       .then(({ body }) => {
@@ -287,9 +287,9 @@ describe("/api/users/user/email", () => {
         );
       });
   });
-  test("GET 404 - returns a 404 not found error when given a nonexistent email", () => {
+  test("POST 404 - returns a 404 not found error when given a nonexistent email", () => {
     return request(app)
-      .get("/api/users/user/email")
+      .post("/api/users/user/email")
       .send({ email: "hello123@gmail.com" })
       .expect(404)
       .then(({ body }) => {
