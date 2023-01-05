@@ -212,8 +212,6 @@ describe("Add a user", () => {
       .send({
         username: "christmas123",
         password: "password",
-        profile_picture:
-          "https://m.media-amazon.com/images/I/31Cd9UQp6eL._SX355_.jpg",
         email: "christmas123@gmail.com",
       })
       .expect(201)
@@ -221,8 +219,25 @@ describe("Add a user", () => {
         expect(res.body.user).toEqual({
           username: "christmas123",
           password: "password",
-          profile_picture:
-            "https://m.media-amazon.com/images/I/31Cd9UQp6eL._SX355_.jpg",
+          profile_picture: null,
+          email: "christmas123@gmail.com",
+        });
+      });
+  });
+  test("POST - 200, allows for the addition of a new user without profilepic", () => {
+    return request(app)
+      .post("/api/users")
+      .send({
+        username: "christmas123",
+        password: "password",
+        email: "christmas123@gmail.com",
+      })
+      .expect(201)
+      .then((res) => {
+        expect(res.body.user).toEqual({
+          username: "christmas123",
+          password: "password",
+          profile_picture: null,
           email: "christmas123@gmail.com",
         });
       });
@@ -295,7 +310,6 @@ describe("/api/users/user/:email", () => {
       });
   });
 });
-
 
 describe("Update a username of a valid user", () => {
   test("Allows a user to update the username of an existing user", () => {
@@ -529,7 +543,7 @@ describe("PATCH /api/myPlants/:username/:my_plant_id/last_waterered", () => {
     return request(app)
       .patch("/api/myPlants/fatfroggo/3/last_watered")
       .send({
-        last_watered_date: '2023-01-01',
+        last_watered_date: "2023-01-01",
       })
       .expect(202)
       .then(({ body }) => {
@@ -591,7 +605,6 @@ describe("PATCH /api/myPlants/:username/:my_plant_id/last_waterered", () => {
       });
   });
 });
-
 
 describe("/api/reddit", () => {
   test("GET 200 - returns an array of all reddit posts of particualr subreddit objects in the correct format", () => {

@@ -24,15 +24,15 @@ exports.selectUserByUsername = (username) => {
 }
 
 exports.addUser = (newUser) => {
-  if ("username" in newUser && "password" in newUser && "email" in newUser && "profile_picture" in newUser) {
+  if ("username" in newUser && "password" in newUser && "email" in newUser) {
     return db
       .query(
         `
-    INSERT INTO users (username, password, profile_picture, email)
+    INSERT INTO users (username, password, email)
     VALUES 
-    ($1, $2, $3, $4) RETURNING *;
+    ($1, $2, $3) RETURNING *;
     `,
-        [newUser.username, newUser.password, newUser.profile_picture, newUser.email]
+        [newUser.username, newUser.password, newUser.email]
       )
       .then((result) => {
         return result.rows[0];
