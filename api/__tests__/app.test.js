@@ -17,7 +17,7 @@ beforeEach(() => {
 
 afterAll(() => {
   return db.end();
-});
+}); 
 
 describe("/api/plants", () => {
   test("GET 200 - returns an array of all plant objects in the correct format", () => {
