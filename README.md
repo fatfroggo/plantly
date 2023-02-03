@@ -1,3 +1,3 @@
 ## Summary
 
-This is a plant app!
+This is the backend component for a plant app!
