@@ -1,6 +1,5 @@
 const app = require("../app.js");
 
-
 const {
   plantsData,
   userData,
